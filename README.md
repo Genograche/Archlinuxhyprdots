@@ -63,3 +63,6 @@ pactl info
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
 -Theme,sddm
+
+##copied a lot from RumiAxalotl
+![RumiAxolotl](https://github.com/RumiAxolotl)
