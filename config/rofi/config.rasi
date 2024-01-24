@@ -1,0 +1,11 @@
+/** Basic config file **/
+
+configuration {
+  show-icons: true;
+  icon-theme: "WhiteSur-dark";
+  display-drun: " ";
+  display-window: " ";
+  display-combi: " ";
+}
+@theme "themes/catppuccin-mocha.rasi"
+
