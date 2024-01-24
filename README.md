@@ -65,6 +65,6 @@ pactl info
 - loginmanager?
 - Sans bold(font)
 - catppuccin-gtk-theme-mocha (theme)
-
+- Get a cursor theme
 ## Copied a lot from RumiAxalotl
 ![RumiAxolotl](https://github.com/RumiAxolotl)
