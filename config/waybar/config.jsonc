@@ -1,0 +1,209 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 0,
+  "modules-left": [
+    "clock",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature",
+    "custom/update",
+    "hyprland/window"
+  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "mpris",
+    "tray",
+    //"bluetooth",
+    "network",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "battery",
+    "backlight",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+    }
+  },
+  "hyprland/window": {
+    "format": " 󰣇 {}"
+  },
+  "tray": {
+    "icon-size": 13,
+    "spacing": 10
+  },
+  "clock": {
+	    "format": " {:%H:%M}",
+  "format-alt": " {:%H:%M   %Y, %d %B, %A}",
+  "tooltip-format": "<tt><small>{calendar}</small></tt>",
+  "calendar": {
+    "mode"          : "year",
+    "mode-mon-col"  : 3,
+    "weeks-pos"     : "right",
+    "on-scroll"     : 1,
+    "format": {
+    "months":     "<span color='#ffead3'><b>{}</b></span>",
+    "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+    "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+    "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+    "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+              }
+              }
+  },
+  "network": {
+    // "interface": "wlan0", (optional) to focus on the interface
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "  {ipaddr}/{cidr}",
+    "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
+    "on-click-right": "~/.config/waybar/scripts/rofi-wifi-menu"
+  },
+//  "bluetooth": {
+//    "exec": "~/.config/waybar/scripts/rofi-bluetooth-menu --status",
+//    "format-disabled": "", // an empty format will hide the module
+//    "format-connected": " {num_connections}",
+//    "tooltip-format": "{device_alias}",
+//    "tooltip-format-connected": " {device_enumerate}",
+//    "tooltip-format-enumerate-connected": "{device_alias}",
+//    "on-click-right": "~/.config/waybar/scripts/rofi-bluetooth-menu"
+//  },
+  "memory": {
+    "interval": 1,
+    "format": " {}%",
+    "tooltip": true,
+    "tooltip-format": "Memory - {used:0.1f}GB used",
+    "on-click": "kitty --start-as=fullscreen --title bpytop sh -c 'htop'"
+  },
+  "cpu": {
+    "interval": 1,
+    "format": " {usage}%",
+    "on-click": "kitty --start-as=fullscreen --title bpytop sh -c 'htop'"
+  },
+  "disk": {
+    "interval": 1,
+    "format": "󰋊 {percentage_used}%",
+    "path": "/",
+    "format-alt-click": "click-right",
+    "format-alt": "󰋊 {percentage_used}%",
+    "tooltip": true,
+    "tooltip-format": "Disk - {used} used out of {total} on {path} ({percentage_used}%)",
+    "on-click": "kitty --start-as=fullscreen --title bpytop sh -c 'htop'"
+  },
+  "temperature": {
+    "interval": 1,
+    "thermal-zone": 0,
+    "format": " {temperatureC}°C",
+    "critical-threshold": 80,
+    "format-critical": " {temperatureC}°C",
+    "on-click": "kitty --start-as=fullscreen --title bpytop sh -c 'htop'"
+  },
+ "custom/updates": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/update",
+        "on-click": "~/.config/waybar/scripts/update update",
+        "interval": 600,
+        "tooltip": true,
+        // "tooltip-format": "{}",
+        // "exec-tooltip": "~/.scripts/updates tooltip"
+    },
+ "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "on-click": "~/.config/waybar/scripts/volume --toggle",
+    "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+    "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "tooltip": true,
+    "tooltip-format": "{icon} at {volume}%"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " Muted",
+    "on-click": "~/.config/waybar/scripts/volume --toggle-mic",
+    "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
+    "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
+    "scroll-step": 5,
+    "tooltip": true,
+    "tooltip-format": " at {volume}%"
+  },
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "interval": 1,
+    "max-length": 60
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "on-scroll-up": "~/.config/waybar/scripts/brightness --inc",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness --dec",
+    "min-length": 6,
+    "on-click": "killall wlsunset",
+    "on-click-right": "wlsunset -t 4500 -T 5500"
+  },
+"custom/power": {
+  "format": "  ",
+  "tooltip": false,
+  //"on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+  "on-click": "wlogout --protocol layer-shell -b 5 -T 400 -B 400"
+}
+
+}

@@ -1,0 +1,161 @@
+@import "mocha.css";
+* {
+    border: none;
+    border-radius: 0;
+    font-family: FiraCode Nerd Font;
+    font-weight: bold;
+    font-size: 11px;
+    min-height: 10px;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: @text;
+}
+
+tooltip {
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @crust;
+    background: @base;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: @surface0;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    color: @lavender;
+}
+
+#workspaces button.focused {
+    color: @subtext0;
+    background: @maroon;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: @crust;
+    background: @mauve;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: @crust;
+    color: @text;
+    border-radius: 10px;
+}
+
+#custom-weather,
+#custom-update,
+#clock,
+#mpris,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#battery,
+#pulseaudio,
+#network,
+#workspaces,
+#window,
+#tray,
+#backlight {
+    background: @base;
+    padding: 0px 5px;
+    margin: 3px 0px;
+    margin-top: 5px;
+    border: 1px solid @mantle;
+}
+
+#tray {
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+#workspaces {
+    background: @base;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+#window{
+    border-radius: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#clock {
+    color: @lavender;
+}
+
+#cpu {
+    color: @teal;
+}
+
+#memory {
+    color: @green;
+}
+
+#disk {
+    color: @yellow;
+}
+
+#temperature {
+    color: @peach;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#temperature.critical {
+    color: @red;
+}
+
+
+#custom-weather {
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+
+
+#custom-update{
+    border-radius: 10px;
+    margin-left: 5px ;
+    color: @sky;
+}
+
+#mpris {
+    color: @green;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#network {
+    color: @teal;
+    border-radius: 10px 0px 0px 10px;
+}
+#pulseaudio {
+    color: @green;
+}
+#pulseaudio.microphone {
+    color: @yellow;
+}
+#battery {
+    color: @maroon;
+}
+#backlight {
+    color: @red;
+}
+#custom-power {
+	background: @base;
+        padding: 0px 5px;
+        margin: 3px 0px;
+        margin-top: 5px;
+        border: 1px solid @mantle;
+	color: @red;
+	
+}
