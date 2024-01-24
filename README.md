@@ -1,8 +1,6 @@
 # Personal Arch Hyprland Configuration by Genograche
 
-##![Screenshot](https://github.com/Genograche/hyprland-config/raw/main/darkmode.png)
-##![Screenshot](https://github.com/genograche/hyprland-config/raw/main/lightmode.png)
-
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/hyprland.png)
 ## Installation
 
 Ensure base-devel is installed before proceeding
