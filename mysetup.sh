@@ -29,12 +29,12 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice file-roller thunar-archive-plugin \
     thunar-media-tags-plugin kitty thunar-volman gvfs-mtp \
-    waybar-git wlogout swaylock-effects pamixer     \
+    waybar-git wlogout swaylock-effects pamixer papirus-icon-theme \
     nwg-look-bin dunst ttf-firacode-nerd noto-fonts \
     noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
     brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
-    lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland \
+    lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha \
     
 fi
 ### making directory ###

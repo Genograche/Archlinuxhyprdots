@@ -62,7 +62,9 @@ pactl info
 - Check xdg-desktop-portal-hyprland
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
--Theme,sddm
+- loginmanager?
+- Sans bold(font)
+- catppuccin-gtk-theme-mocha (theme)
 
 ## Copied a lot from RumiAxalotl
 ![RumiAxolotl](https://github.com/RumiAxolotl)
