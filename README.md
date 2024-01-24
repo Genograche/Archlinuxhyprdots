@@ -64,5 +64,5 @@ pactl info
 - wine,lutris
 -Theme,sddm
 
-## copied a lot from RumiAxalotl
+## Copied a lot from RumiAxalotl
 ![RumiAxolotl](https://github.com/RumiAxolotl)
