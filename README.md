@@ -41,11 +41,11 @@ makepkg -si
 - fstrim.timer
 - swapfile(refer to wiki)
 - auto-cpufreq
-- 
-
 
 - IF dhcpcd is installed then save
-
+```bash
+sudo systemctl enable dhcpcd@(interface).service
+```
 ```
 [Service]
 ExecStart=
