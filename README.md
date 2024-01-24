@@ -62,7 +62,7 @@ pactl info
 - Check xdg-desktop-portal-hyprland
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
-- loginmanager?
+- loginmanager-greetd?
 - Sans bold(font)
 - catppuccin-gtk-theme-mocha (theme)
 - Get a cursor theme
