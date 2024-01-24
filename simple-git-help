@@ -1,0 +1,6 @@
+github-cli
+git clone
+(modify or add)
+git add (files)
+git commit -a -m 'Minor change in vimrc'
+git push
