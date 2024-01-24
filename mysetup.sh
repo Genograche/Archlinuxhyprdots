@@ -40,6 +40,7 @@ fi
 ### making directory ###
 
 xdg-user-dirs-update
+mkdir -p Pictures/Screenshots/
 
 ### Copy Config Files ###
 read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
