@@ -24,7 +24,7 @@ fi
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     yay -R --noconfirm swaylock waybar
-    yay -S --noconfirm hyprland-git polkit-gnome ffmpeg neovim viewnior \
+    yay -S hyprland-git polkit-gnome ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice file-roller thunar-archive-plugin \
@@ -34,13 +34,13 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
     brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
-    lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha \
+    lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed \
     
 fi
 ### making directory ###
 
-xdg-user-dirs-update
-mkdir -p Pictures/Screenshots/
+#xdg-user-dirs-update
+mkdir -p ~/Pictures/Screenshots/
 
 ### Copy Config Files ###
 read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
