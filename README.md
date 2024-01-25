@@ -64,7 +64,7 @@ pactl info
 - catppuccin-gtk-theme-mocha (theme)
 - Get a cursor theme
 
-##Ignore the following if you have not installed dhcpcd
+## Ignore the following if you have not installed dhcpcd
 
 - IF dhcpcd is installed and startup is slow then save
 ```bash
