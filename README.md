@@ -14,25 +14,32 @@ git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
+### Clone the repo
 
+``` bash
+git clone https://github.com/Genograche/Arch-hyprlandconfigs.git
+cd Arch-hyprlandconfigs
+```
 ### Required Packages
 
 ``` bash
-
-    yay -S --noconfirm hyprland-git polkit-gnome ffmpeg neovim viewnior \
+     yay -R --noconfirm swaylock waybar
+    yay -S hyprland-git polkit-gnome ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice file-roller thunar-archive-plugin \
     thunar-media-tags-plugin kitty thunar-volman gvfs-mtp \
-    waybar-git wlogout swaylock-effects pamixer     \
-    nwg-look-bin dunst ttf-firacode-nerd noto-fonts \
+    waybar-git wlogout swaylock-effects pamixer papirus-icon-theme \
+    nwg-look-bin dunst ttf-firacode-nerd noto-fonts qt5-wayland qt6-wayland\
     noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
     brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
-    lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland htop pacman-contrib reflector
+    lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
+   
 ```
 ## Notes
 - bash completion
+- zsh and plugins
 - all noto fonts
 - groups wheel
 - ntp
@@ -41,30 +48,36 @@ makepkg -si
 - fstrim.timer
 - swapfile(refer to wiki)
 - auto-cpufreq
-
-- IF dhcpcd is installed then save
-```bash
-sudo systemctl enable dhcpcd@(interface).service
-```
-```
-[Service]
-ExecStart=
-ExecStart=/usr/bin/dhcpcd -b -q %I
-```
-
-- To /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
-
 - Check pipewire
 ```bash
 pactl info
 ```
-- Check zsh and starship prompt.If needed check fonts.zsh,zsh-autosuggestions,zsh-completions,zsh-syntax-highlighting
-- Check xdg-desktop-portal-hyprland
+- Check xdg-desktop-portal-hyprland(obs)
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
 - loginmanager-greetd?
 - Sans bold(font)
 - catppuccin-gtk-theme-mocha (theme)
 - Get a cursor theme
+
+##Ignore the following if you have not installed dhcpcd
+
+- IF dhcpcd is installed and startup is slow then save
+```bash
+sudo systemctl enable dhcpcd@(interface).service
+```
+
+- If dhcpcd causes the startup to slow save the folllowing to /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
+
+```
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dhcpcd -b -q %I
+```
+- If needed disable dhcpcd ARP probing in ```\etc\dhcpcd.conf```
+```
+noarp
+```
+
 ## Copied a lot from RumiAxalotl
 [RumiAxolotl](https://github.com/RumiAxolotl)
