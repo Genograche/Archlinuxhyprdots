@@ -68,7 +68,7 @@ pactl info
 
 - IF dhcpcd is installed and startup is slow then save
 ```bash
-sudo systemctl enable dhcpcd@(interface).service
+sudo systemctl enable dhcpcd@(ip link your interface name).service
 ```
 
 - If dhcpcd causes the startup to slow save the folllowing to /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
