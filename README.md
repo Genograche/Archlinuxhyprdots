@@ -2,7 +2,7 @@
 
 ![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/hyprland.png)
 ## Installation
-
+## Open Arch Wiki
 Ensure base-devel is installed before proceeding
 
 ### Yay
@@ -71,7 +71,7 @@ pactl info
 sudo systemctl enable dhcpcd@(ip link your interface name).service
 ```
 
-- If dhcpcd causes the startup to slow save the folllowing to /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
+- If dhcpcd causes the startup to slow then save the folllowing to /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
 
 ```
 [Service]
