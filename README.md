@@ -37,7 +37,11 @@ cd Arch-hyprlandconfigs
     lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
    
 ```
-## Notes
+## Reboot
+``` bash
+reboot
+```
+## Things to remember
 - bash completion
 - zsh and plugins
 - all noto fonts
