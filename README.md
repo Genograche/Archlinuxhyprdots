@@ -44,7 +44,7 @@ xdg-user-dirs-update
 ``` bash
 reboot
 ```
-## Things to remember
+## Things to remember(ONLY FOR ME-PERSONAL)
 - bash completion
 - zsh and plugins(starship)
 - all noto fonts
@@ -71,10 +71,9 @@ export VDPAU_DRIVER=radeonsi
 export LIBVA_DRIVER_NAME=radeonsi
 ```
 - loginmanager-sddm
-- catppuccin-gtk-theme-mocha (theme)
 - Get a cursor theme
 
-## Ignore the following if you have not installed dhcpcd
+## Ignore the following if dhcpcd is not installed
 
 - IF dhcpcd is installed and startup is slow then save
 ```bash
