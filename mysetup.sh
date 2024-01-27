@@ -31,14 +31,14 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     playerctl noise-suppression-for-voice file-roller thunar-archive-plugin \
     thunar-media-tags-plugin kitty thunar-volman gvfs-mtp \
     waybar-git wlogout swaylock-effects pamixer papirus-icon-theme \
-    nwg-look-bin dunst ttf-firacode-nerd noto-fonts qt5-wayland qt6-wayland\
-    noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
-    brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
+    nwg-look-bin dunst ttf-firacode-nerd noto-fonts noto-fonts-emoji \
+    ttf-nerd-fonts-symbols-common otf-firamono-nerd qt5ct qt6ct qt5-wayland \
+    qt6-wayland brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
     lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
 fi
-### making directory ###
 
+### making directory ###
 #xdg-user-dirs-update
 mkdir -p ~/Pictures/Screenshots/
 

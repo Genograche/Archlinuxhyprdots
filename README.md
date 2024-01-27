@@ -30,21 +30,28 @@ cd Arch-hyprlandconfigs
     playerctl noise-suppression-for-voice file-roller thunar-archive-plugin \
     thunar-media-tags-plugin kitty thunar-volman gvfs-mtp \
     waybar-git wlogout swaylock-effects pamixer papirus-icon-theme \
-    nwg-look-bin dunst ttf-firacode-nerd noto-fonts qt5-wayland qt6-wayland\
-    noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
+    nwg-look-bin dunst ttf-firacode-nerd noto-fonts qt5ct qt6ct qt5-wayland \
+    qt6-wayland noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
     brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
     lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
-   
+```   
+## Update user directories
+``` bash
+xdg-user-dirs-update
 ```
+
 ## Reboot
 ``` bash
 reboot
 ```
 ## Things to remember
 - bash completion
-- zsh and plugins
+- zsh and plugins(starship)
 - all noto fonts
+```bash
+ sudo pacman -S $(pacman -Ssq noto-fonts) --needed
+```
 - groups wheel
 - ntp
 - network manger
@@ -59,8 +66,7 @@ pactl info
 - Check xdg-desktop-portal-hyprland(obs)
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
-- loginmanager-greetd?
-- Sans bold(font)
+- loginmanager-sddm
 - catppuccin-gtk-theme-mocha (theme)
 - Get a cursor theme
 
@@ -83,5 +89,14 @@ ExecStart=/usr/bin/dhcpcd -b -q %I
 noarp
 ```
 
-## Copied a lot from RumiAxalotl
+## Base config from RumiAxalotl
 [RumiAxolotl](https://github.com/RumiAxolotl)
+## Rofi config from adi1090x
+[adi1090x](https://github.com/adi1090x)
+## Sddm theme from MarianArlt 
+[MarianArlt](https://github.com/MarianArlt)
+## Grub theme from vinceliuce 
+[vinceliuice](https://github.com/vinceliuice)
+## The rest from Archwiki and Hyprlandwiki
+[Archwiki](https://wiki.archlinux.org/)
+[Hyprland](https://wiki.hyprland.org/)
