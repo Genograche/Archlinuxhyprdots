@@ -39,7 +39,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 fi
 
 ### making directory ###
-#xdg-user-dirs-update
+xdg-user-dirs-update
 mkdir -p ~/Pictures/Screenshots/
 
 ### Copy Config Files ###
@@ -50,14 +50,11 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R config/hypr ~/.config/
     cp -R config/kitty ~/.config/
     cp -R config/neofetch ~/.config/
-    #cp -R config/pipewire ~/.config/
     cp -R config/rofi ~/.config/
     cp -R config/swaylock ~/.config/
     cp -R config/waybar ~/.config/
     cp -R config/wlogout ~/.config/
     cp -R config/xfce4 ~/.config/
-
-   ## mkdir -p ~/Pictures/wallpaper
     cp -R ./wallpapers ~/Pictures/
     
     # Set some files as exacutable 
