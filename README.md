@@ -46,16 +46,17 @@ mkdir -p ~/Pictures/Screenshots/
 ```
 ## Copy Config files
 ```bash
-cp -R config/dunst ~/.config/
+    cp -R config/Thunar ~/.config/
+    cp -R config/dunst ~/.config/
     cp -R config/hypr ~/.config/
     cp -R config/kitty ~/.config/
     cp -R config/neofetch ~/.config/
+    cp -R config/ranger ~/.config/
     cp -R config/rofi ~/.config/
     cp -R config/swaylock ~/.config/
     cp -R config/waybar ~/.config/
-    cp -R config/wlogout ~/.config/
     cp -R config/xfce4 ~/.config/
-    cp -R ./wallpapers ~/Pictures/
+    cp -R wallpapers ~/Pictures/
 ```
 
 ## Set some files as executables

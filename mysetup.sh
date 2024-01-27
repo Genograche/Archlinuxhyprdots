@@ -23,8 +23,6 @@ fi
 ### Install all of the above pacakges ####
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-    yay -R --noconfirm swaylock waybar
-    yay -R --noconfirm swaylock waybar
     yay -S hyprland-git polkit-gnome ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
@@ -36,6 +34,8 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     qt6-wayland brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
     lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
+  else 
+    exit
 fi
 
 ### making directory ###
@@ -46,20 +46,23 @@ mkdir -p ~/Pictures/Screenshots/
 read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
+    cp -R config/Thunar ~/.config/
     cp -R config/dunst ~/.config/
     cp -R config/hypr ~/.config/
     cp -R config/kitty ~/.config/
     cp -R config/neofetch ~/.config/
+    cp -R config/ranger ~/.config/
     cp -R config/rofi ~/.config/
     cp -R config/swaylock ~/.config/
     cp -R config/waybar ~/.config/
-    cp -R config/wlogout ~/.config/
     cp -R config/xfce4 ~/.config/
-    cp -R ./wallpapers ~/Pictures/
-    
+    cp -R wallpapers ~/Pictures/
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/xdg-portal-hyprland
     chmod +x ~/.config/waybar/scripts/*
+    echo -e "If rofi does not work,look at its permissions.\n"
+  else 
+    exit
 fi
 
 ### Script is done ###
@@ -71,4 +74,3 @@ if [[ $HYP == "Y" || $HYP == "y" ]]; then
 else
     exit
 fi
-
