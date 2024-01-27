@@ -11,6 +11,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Menu select
+zstyle ':completion:*' menu select
+
+#sources
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
@@ -20,3 +24,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias upgrade='sudo pacman -Syyu'
 alias mirror='reflector --latest 6 --sort rate --save /etc/pacman.d/mirrorlist'
+alias update='sudo pacman -Syyu'
+alias fullupdate='yay -Syu'
+alias pacin='sudo pacman -S'
+alias pacrm='sudo pacman -Rns'
+alias vi='nvim'

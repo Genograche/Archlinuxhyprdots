@@ -1,4 +1,4 @@
-# ascii/distro/redstar
+# ascii/distro/arch
 ${c2}                    
 
                   ▟█▙

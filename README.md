@@ -1,6 +1,7 @@
 # Personal Arch Hyprland Configuration by Genograche
 
-![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/hyprland.png)
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/showcase/hyprland.png)
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/showcase/hyprland-rofi.png)
 ## Installation
 ## Open Arch Wiki
 Ensure base-devel is installed before proceeding
@@ -9,7 +10,7 @@ Ensure base-devel is installed before proceeding
 
 **Important**: Execute the following commands as a regular user, NOT as root!
 
-```
+```bash
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
@@ -35,12 +36,11 @@ cd Arch-hyprlandconfigs
     brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
     lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
-```   
+```
 ## Update user directories
-``` bash
+```bash
 xdg-user-dirs-update
 ```
-
 ## Reboot
 ``` bash
 reboot
@@ -66,6 +66,11 @@ pactl info
 - Check xdg-desktop-portal-hyprland(obs)
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
+- if needed for vdapu,set env variables in /etc/profile
+```
+export VDPAU_DRIVER=radeonsi
+export LIBVA_DRIVER_NAME=radeonsi
+```
 - loginmanager-sddm
 - catppuccin-gtk-theme-mocha (theme)
 - Get a cursor theme
