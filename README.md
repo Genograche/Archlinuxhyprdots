@@ -24,7 +24,6 @@ cd Arch-hyprlandconfigs
 ### Required Packages
 
 ``` bash
-     yay -R --noconfirm swaylock waybar
     yay -S hyprland-git polkit-gnome ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
