@@ -91,7 +91,16 @@ pactl info
 - Check xdg-desktop-portal-hyprland(obs)
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
-- if needed for vdapu,set env variables in /etc/profile
+- For my amd graphics driver if needed set the following kernal parameters(etc/defaults/grub),
+```
+radeon.si_support=0 amdgpu.si_support=1
+radeon.cik_support=0 amdgpu.cik_support=1
+```
+- check for amdgpu kernal driver instead of radeon
+```bash
+lspci -k
+```
+- For my amd,if needed for vdapu,set env variables in /etc/profile
 ```
 export VDPAU_DRIVER=radeonsi
 export LIBVA_DRIVER_NAME=radeonsi
