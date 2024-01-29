@@ -1,6 +1,7 @@
 github-cli
 git clone
 (modify or add)
+gh user.email && gh user.username
 git add (files)
 git commit -a -m 'Minor change in vimrc'
 git push
