@@ -27,7 +27,7 @@ cd Arch-hyprlandconfigs
     yay -S hyprland-git polkit-gnome ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
-    playerctl noise-suppression-for-voice file-roller thunar-archive-plugin \
+    playerctl noise-suppression-for-voice xarchiver thunar-archive-plugin \
     thunar-media-tags-plugin kitty thunar-volman gvfs-mtp \
     waybar-git wlogout swaylock-effects pamixer papirus-icon-theme \
     nwg-look-bin dunst ttf-firacode-nerd noto-fonts qt5ct qt6ct qt5-wayland \
