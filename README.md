@@ -117,6 +117,11 @@ ExecStart=/usr/bin/dhcpcd -b -q %I
 ```
 noarp
 ```
+- If games in wine doesn't have sound get
+```bash
+winetricks faudio
+winetricks xact
+```
 
 ## Base config from RumiAxalotl
 [RumiAxolotl](https://github.com/RumiAxolotl)
