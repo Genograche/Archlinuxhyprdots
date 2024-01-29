@@ -91,7 +91,7 @@ pactl info
 - Check xdg-desktop-portal-hyprland(obs)
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
-- For my amd graphics driver if needed set the following kernal parameters(etc/defaults/grub),
+- For my amd graphics driver if needed set the following kernal parameters(/etc/defaults/grub),
 ```
 radeon.si_support=0 amdgpu.si_support=1
 radeon.cik_support=0 amdgpu.cik_support=1
