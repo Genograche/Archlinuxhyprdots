@@ -10,26 +10,26 @@ Ensure base-devel is installed before proceeding
 
 **Important**: Execute the following commands as a regular user, NOT as root!
 
-```bash
+```
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 ```
 ### Clone the repo
 
-``` bash
+```
 git clone https://github.com/Genograche/Arch-hyprlandconfigs.git
 cd Arch-hyprlandconfigs
 ```
 ### Required Packages
 
-``` bash
-    yay -S hyprland-git polkit-gnome ffmpeg neovim viewnior \
+```
+    yay -S hyprland polkit-gnome ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice xarchiver thunar-archive-plugin \
     thunar-media-tags-plugin kitty thunar-volman gvfs-mtp \
-    waybar-git wlogout swaylock-effects pamixer papirus-icon-theme \
+    waybar wlogout swaylock-effects pamixer papirus-icon-theme \
     nwg-look-bin dunst ttf-firacode-nerd noto-fonts qt5ct qt6ct qt5-wayland \
     qt6-wayland noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
     brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
@@ -37,7 +37,7 @@ cd Arch-hyprlandconfigs
     lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
 ```
 ## Update user directories
-```bash
+```
 xdg-user-dirs-update
 ```
 ## Making Screenshot directories
@@ -45,7 +45,7 @@ xdg-user-dirs-update
 mkdir -p ~/Pictures/Screenshots/
 ```
 ## Copy Config files
-```bash
+```
     cp -R config/Thunar ~/.config/
     cp -R config/dunst ~/.config/
     cp -R config/hypr ~/.config/
@@ -60,13 +60,13 @@ mkdir -p ~/Pictures/Screenshots/
 ```
 
 ## Set some files as executables
-```bash
+```
 chmod +x ~/.config/hypr/xdg-desktop-portal-hyprland
 chmod +x ~/.config/waybar/scripts/*
 ```
 
 ## Reboot
-``` bash
+```
 reboot
 ```
 
@@ -74,7 +74,7 @@ reboot
 - bash completion
 - zsh and plugins(starship)
 - all noto fonts
-```bash
+```
  sudo pacman -S $(pacman -Ssq noto-fonts) --needed
 ```
 - groups wheel
@@ -85,7 +85,7 @@ reboot
 - swapfile(refer to wiki)
 - auto-cpufreq
 - Check pipewire
-```bash
+```
 pactl info
 ```
 - Check xdg-desktop-portal-hyprland(obs)
@@ -97,7 +97,7 @@ radeon.si_support=0 amdgpu.si_support=1
 radeon.cik_support=0 amdgpu.cik_support=1
 ```
 - check for amdgpu kernal driver instead of radeon
-```bash
+```
 lspci -k
 ```
 - For my amd,if needed for vdapu,set env variables in /etc/profile
@@ -111,7 +111,7 @@ export LIBVA_DRIVER_NAME=radeonsi
 ## Ignore the following if dhcpcd is not installed
 
 - IF dhcpcd is installed and startup is slow then save
-```bash
+```
 sudo systemctl enable dhcpcd@(ip link your interface name).service
 ```
 
@@ -127,7 +127,7 @@ ExecStart=/usr/bin/dhcpcd -b -q %I
 noarp
 ```
 - If games in wine doesn't have sound get
-```bash
+```
 winetricks faudio
 winetricks xact
 ```

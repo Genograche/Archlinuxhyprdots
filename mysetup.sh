@@ -23,12 +23,12 @@ fi
 ### Install all of the above pacakges ####
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-    yay -S hyprland-git polkit-gnome ffmpeg neovim viewnior \
+    yay -S hyprland polkit-gnome ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice xarchiver thunar-archive-plugin \
     thunar-media-tags-plugin kitty thunar-volman gvfs-mtp \
-    waybar-git wlogout swaylock-effects pamixer papirus-icon-theme \
+    waybar wlogout swaylock-effects pamixer papirus-icon-theme \
     nwg-look-bin dunst ttf-firacode-nerd noto-fonts noto-fonts-emoji \
     ttf-nerd-fonts-symbols-common otf-firamono-nerd qt5ct qt6ct qt5-wayland \
     qt6-wayland brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
