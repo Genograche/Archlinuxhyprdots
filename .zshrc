@@ -14,18 +14,36 @@ compinit
 # Menu select
 zstyle ':completion:*' menu select
 
-#sources
+# Sources
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/doc/pkgfile/command-not-found.zsh
+
+# Starship 
 eval "$(starship init zsh)"
 
-#alias
-alias ls='ls --color=auto'
+# Created by `pipx` on 2024-01-28 20:06:10
+export PATH="$PATH:/home/genograche/.local/bin"
+
+# Alias
+alias ls='ls -a --color=auto'
 alias grep='grep --color=auto'
 alias upgrade='sudo pacman -Syyu'
-alias mirror='reflector --latest 6 --sort rate --save /etc/pacman.d/mirrorlist'
+alias mirror='reflector --latest 6 --sort rate --protocol http,https --save /etc/pacman.d/mirrorlist'
 alias update='sudo pacman -Syyu'
 alias fullupdate='yay -Syu'
 alias pacin='sudo pacman -S'
 alias pacrm='sudo pacman -Rns'
+alias search='pacman -Ss'
+alias losearch='pacman -Qs'
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 alias vi='nvim'
+alias inm='sudo systemctl restart NetworkManager.service'
+alias mirror='sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist'
+alias mirrora='sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist'
+alias mirrord='sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist'
+alias mirrors='sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist'
+alias mirrorx='sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist'
+alias mirrorxx='sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist'
+alias ram='rate-mirrors --allow-root --disable-comments arch | sudo tee /etc/pacman.d/mirrorlist'
+alias rams='rate-mirrors --allow-root --disable-comments --protocol https arch  | sudo tee /etc/pacman.d/mirrorlist'
