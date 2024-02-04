@@ -12,7 +12,6 @@
     "memory",
     "disk",
     "temperature",
-    //"custom/update",
     "hyprland/window"
   ],
   "modules-center": ["hyprland/workspaces"],
@@ -35,6 +34,16 @@
     "on-scroll-down": "hyprctl dispatch workspace e-1",
     "format": "{icon}",
     "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
       "active": "",
       "default": ""
     },
@@ -101,11 +110,12 @@
     "format": " {}%",
     "tooltip": true,
     "tooltip-format": "Memory - {used:0.1f}GB used",
-    "on-click": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
+    "on-click": "gnome-system-monitor"
   },
   "cpu": {
     "interval": 1,
-    "format": " {usage}%",
+    "format": "{icon0}{icon1}{icon2}{icon3}  {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "on-click": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
   },
   "disk": {
@@ -116,7 +126,7 @@
     "format-alt": "󰋊 {percentage_used}%",
     "tooltip": true,
     "tooltip-format": "Disk - {used} used out of {total} on {path} ({percentage_used}%)",
-    "on-click": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
+    "on-click": "gnome-system-monitor"
   },
   "temperature": {
     "interval": 1,
@@ -124,15 +134,8 @@
     "format": " {temperatureC}°C",
     "critical-threshold": 80,
     "format-critical": " {temperatureC}°C",
-    "on-click": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
+    "on-click": "gnome-system-monitor"
   },
-// "custom/update": {
-//    "format": "{}",
-//    "interval": 60,
-//    "exec": "~/.config/waybar/scripts/update",
-//    "on-click": "~/.config/waybar/scripts/update update",
- //   "tooltip": false
-  //  },
  "battery": {
     "states": {
       "good": 95,
@@ -201,7 +204,6 @@
 "custom/power": {
   "format": "  ",
   "tooltip": false,
-  //"on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
   "on-click": "killall rofi || ~/.config/rofi/scripts/powermenu_t5"
 }
 

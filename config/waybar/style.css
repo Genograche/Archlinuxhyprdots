@@ -23,7 +23,7 @@ tooltip {
 
 #workspaces button {
     padding: 5px;
-    color: @surface0;
+    color: @red;
     margin-right: 5px;
 }
 
