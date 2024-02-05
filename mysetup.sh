@@ -23,7 +23,7 @@ fi
 ### Install all of the above pacakges ####
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-    yay -S hyprland polkit-gnome ffmpeg neovim viewnior \
+    yay -S hyprland polkit-gnome gnome-system-monitor ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice xarchiver thunar-archive-plugin \
