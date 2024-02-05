@@ -56,6 +56,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R config/swaylock ~/.config/
     cp -R config/waybar ~/.config/
     cp -R config/xfce4 ~/.config/
+    cp config/starship.toml ~/.config/
     cp -R wallpapers ~/Pictures/
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/xdg-portal-hyprland

@@ -56,6 +56,7 @@ mkdir -p ~/Pictures/Screenshots/
     cp -R config/swaylock ~/.config/
     cp -R config/waybar ~/.config/
     cp -R config/xfce4 ~/.config/
+    cp config/starship.toml ~/.config/
     cp -R wallpapers ~/Pictures/
 ```
 
