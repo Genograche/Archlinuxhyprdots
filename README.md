@@ -56,8 +56,9 @@ mkdir -p ~/Pictures/Screenshots/
     cp -R config/swaylock ~/.config/
     cp -R config/waybar ~/.config/
     cp -R config/xfce4 ~/.config/
-    cp config/starship.toml ~/.config/
     cp -R wallpapers ~/Pictures/
+    ccp -R cursors/* ~/.local/share/icons/
+    cp config/starship.toml ~/.config/
 ```
 
 ## Set some files as executables
