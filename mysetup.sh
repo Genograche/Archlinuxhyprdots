@@ -56,7 +56,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R config/swaylock ~/.config/
     cp -R config/waybar ~/.config/
     cp -R config/xfce4 ~/.config/
-    cp -R cursors/* ~/.local/share/icons/ 
+    cp -R config/cursors/* ~/.local/share/icons/ 
     cp -R wallpapers ~/Pictures/
     cp config/starship.toml ~/.config/
     # Set some files as exacutable 
