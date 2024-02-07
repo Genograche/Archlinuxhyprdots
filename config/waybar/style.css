@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "mocha.css:";
 * {
     border: none;
     border-radius: 0;
