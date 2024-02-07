@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -43,7 +43,7 @@ alias grep='grep --color=auto'
 alias upgrade='sudo pacman -Syyu'
 alias mirror='reflector --latest 6 --sort rate --protocol http,https --save /etc/pacman.d/mirrorlist'
 alias update='sudo pacman -Syyu'
-alias fullupdate='yay -Syu'
+alias fullupdate='yay -Syyu'
 alias pacin='sudo pacman -S'
 alias pacrm='sudo pacman -Rns'
 alias search='pacman -Ss'
