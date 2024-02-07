@@ -1,4 +1,4 @@
-@import "mocha.css:";
+@import "mocha.css";
 * {
     border: none;
     border-radius: 0;
@@ -114,13 +114,10 @@ tooltip {
     color: @red;
 }
 
-
 #custom-weather {
     border-radius: 10px;
     margin-left: 5px;
 }
-
-
 
 #custom-update{
     border-radius: 10px;
@@ -134,22 +131,28 @@ tooltip {
     margin-right: 5px;
     margin-left: 5px;
 }
+
 #network {
     color: @teal;
     border-radius: 10px 0px 0px 10px;
 }
+
 #pulseaudio {
     color: @green;
 }
+
 #pulseaudio.microphone {
     color: @yellow;
 }
+
 #battery {
     color: @maroon;
 }
+
 #backlight {
     color: @red;
 }
+
 #custom-power {
 	background: @base;
         padding: 0px 5px;

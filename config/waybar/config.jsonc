@@ -191,8 +191,9 @@
     "max-length": 60
   },
   "backlight": {
-    "device": "intel_backlight",
+    "device": "radeon_bl0",
     "format": "{icon} {percent}%",
+    "tooltip": false,
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "~/.config/waybar/scripts/brightness --inc",
     "on-scroll-down": "~/.config/waybar/scripts/brightness --dec",
