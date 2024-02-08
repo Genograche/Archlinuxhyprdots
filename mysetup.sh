@@ -24,16 +24,17 @@ fi
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     yay -S hyprland polkit-gnome gnome-system-monitor ffmpeg neovim viewnior \
-    rofi-lbonn-wayland pavucontrol thunar starship cliphist wl-clipboard \
+    rofi-lbonn-wayland pavucontrol thunar galculator starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice xarchiver thunar-archive-plugin \
-    thunar-media-tags-plugin kitty thunar-volman gvfs-mtp \
+    thunar-media-tags-plugin kitty alacritty thunar-volman gvfs-mtp \
     waybar wlogout swaylock-effects pamixer papirus-icon-theme \
     nwg-look-bin dunst ttf-firacode-nerd noto-fonts noto-fonts-emoji \
     ttf-nerd-fonts-symbols-common otf-firamono-nerd qt5ct qt6ct qt5-wayland \
     qt6-wayland brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
-    lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
+    lib32-pipewire-jack xdg-user-dirs xdg-desktop-portal-hyprland \
+    catppuccin-gtk-theme-mocha --needed
   else 
     exit
 fi
