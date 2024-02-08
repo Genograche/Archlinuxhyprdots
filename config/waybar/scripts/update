@@ -20,7 +20,7 @@ esac
 
 # If the parameter is "update", update all services
 if [ "$1" = "update" ]; then
-    kitty --title update-system sh -c 'yay -Syu'
+    alacritty --title update-system sh -c 'yay -Syu'
 fi
 
 # If there aren't any parameters, return the total number of updates

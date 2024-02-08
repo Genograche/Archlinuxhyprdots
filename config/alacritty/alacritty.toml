@@ -1,5 +1,5 @@
 import = [
-  "~/.config/alacritty/catppuccin-macchiato.toml"
+  "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
 [env]
@@ -22,7 +22,7 @@ style = "Italic"
 
 [font.normal]
 family = "FiraCode Nerd Font Mono"
-style = "Regular"
+style = "Medium"
 
 [font.offset]
 x = 0
@@ -116,7 +116,7 @@ mods = "Shift"
 history = 5000
 
 [window]
-dynamic_padding = false
+dynamic_padding = true
 opacity = 0.8
 title = "Alacritty"
 

@@ -115,7 +115,7 @@
   "cpu": {
     "interval": 1,
     "format": " {usage}%",
-    "on-click": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
+    "on-click": "alacritty --start-as=fullscreen --title htop sh -c 'htop'"
   },
   "disk": {
     "interval": 1,
