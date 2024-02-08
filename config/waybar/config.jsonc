@@ -186,7 +186,7 @@
     },
     "status-icons": {
       "paused": "▶"
- },
+    },
     "interval": 1,
     "max-length": 60
   },
@@ -205,6 +205,8 @@
   "format": "  ",
   "tooltip": false,
   "on-click": "killall rofi || ~/.config/rofi/scripts/powermenu_t5"
-}
+  }
 
 }
+
+
