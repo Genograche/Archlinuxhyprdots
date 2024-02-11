@@ -24,6 +24,8 @@ export EDITOR="nvim"              # $EDITOR use Emacs in terminal
 #export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mode
 # Created by `pipx` on 2024-01-28 20:06:10
 export PATH="$PATH:/home/genograche/.local/bin"
+#starshipconfig
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 ### "nvim" as manpager
 export MANPAGER="nvim +Man!"
