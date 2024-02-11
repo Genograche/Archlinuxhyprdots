@@ -7,6 +7,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # Skip all aliases, in lib files and enabled plugins
 zstyle ':omz:*' aliases no
 
+# zsh autocorrect
+unsetopt correct
+#ENABLE_CORRECTION="false"
+
 # Sources
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -107,8 +111,8 @@ source $ZSH/oh-my-zsh.sh
 alias history='history 1'
 alias inm='sudo systemctl restart NetworkManager'
 alias service='sudo systemctl'
-alias vizsh='vim .zshrc'
-alias srczsh='source .zshrc'
+alias vizsh='vim $HOME/.zshrc'
+alias srczsh='source $HOME/.zshrc'
 
 # Aurhelper
 aurhelper="yay"
@@ -130,7 +134,7 @@ alias parsua='$aurhelper -Sua'           # update only AUR pkgs (aurhelper)
 alias fullupdate='$aurhelper -Syu'           # update standard pkgs and AUR pkgs (aurhelper)
 alias unlock='sudo rm /var/lib/pacman/db.lck'        # remove pacman lock
 alias cleanup='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias pacrm='$aurhelper -Rns' # uninstall package
+alias un='$aurhelper -Rns' # uninstall package
 alias pacin='$aurhelper -S' # install pkg
 alias pl='$aurhelper -Qs' # list installed package
 alias search='$aurhelper -Ss' # list availabe package
