@@ -115,6 +115,7 @@ alias inm='sudo systemctl restart NetworkManager'
 alias service='sudo systemctl'
 alias vizsh='vim $HOME/.zshrc'
 alias srczsh='source $HOME/.zshrc'
+alias bat='cat'
 
 # Aurhelper
 aurhelper="yay"
@@ -136,7 +137,7 @@ alias parsua='$aurhelper -Sua'           # update only AUR pkgs (aurhelper)
 alias fullupdate='$aurhelper -Syu'           # update standard pkgs and AUR pkgs (aurhelper)
 alias unlock='sudo rm /var/lib/pacman/db.lck'        # remove pacman lock
 alias cleanup='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias un='$aurhelper -Rns' # uninstall package
+alias pacrm='$aurhelper -Rns' # uninstall package
 alias pacin='$aurhelper -S' # install pkg
 alias pl='$aurhelper -Qs' # list installed package
 alias search='$aurhelper -Ss' # list availabe package
