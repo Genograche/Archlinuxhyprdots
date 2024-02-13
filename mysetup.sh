@@ -23,7 +23,7 @@ fi
 ### Install all of the above pacakges ####
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-    yay -S hyprland polkit-gnome gnome-system-monitor ffmpeg neovim viewnior \
+    yay -S hyprland polkit-gnome gnome-keyring seahorse gnome-system-monitor ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar galculator starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice xarchiver thunar-archive-plugin \
@@ -47,19 +47,9 @@ mkdir -p ~/Pictures/Screenshots/
 read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
-    cp -R config/Thunar ~/.config/
-    cp -R config/dunst ~/.config/
-    cp -R config/hypr ~/.config/
-    cp -R config/kitty ~/.config/
-    cp -R config/neofetch ~/.config/
-    cp -R config/ranger ~/.config/
-    cp -R config/rofi ~/.config/
-    cp -R config/swaylock ~/.config/
-    cp -R config/waybar ~/.config/
-    cp -R config/xfce4 ~/.config/
-    cp -R config/cursors/* ~/.local/share/icons/ 
+    cp -R config/* ~/.config/
+    cp -R cursors/* ~/.local/share/icons/ 
     cp -R wallpapers ~/Pictures/
-    cp config/starship.toml ~/.config/
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/xdg-portal-hyprland
     chmod +x ~/.config/waybar/scripts/*
