@@ -64,6 +64,7 @@ reboot
 ```
 
 ## Things to remember(ONLY FOR ME-PERSONAL)
+- set default applications $xdg-mime example:($xdg-mime default thunar.desktop inode/directory)
 - bash completion
 - zsh and plugins(starship)
 - all noto fonts
