@@ -4,8 +4,9 @@ iDIR="$HOME/.config/dunst/icons"
 
 # Get brightness
 get_backlight() {
-  #brightnessctl -m -d device_name | awk -F, '{print substr($4, 0, length($4)-1)}' ##device_name can be found using $(brightnessctl -l | grep backlight)
-  light=$(brightnessctl -m | awk -F, '{print $4}')
+  #brightnessctl -m -d device_name | awk -F, '{print substr($4, 0, length($4)-1)}' ##device_name can be found using \
+  #$(brightnessctl -l | grep backlight)
+  light=$(brightnessctl -m | grep -o '[0-9]\+%' | head -c-2)
   echo "${light}%"
 }
 

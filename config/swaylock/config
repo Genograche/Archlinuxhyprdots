@@ -4,15 +4,15 @@ clock
 screenshot
 effect-blur=15x15
 effect-vignette=1:1
-color=1e1e2e
+color=1f1d2e80
 font="Inter"
 indicator
 indicator-radius=200
 indicator-thickness=20
-line-color=1e1e2e
+line-color=1f1d2e
 ring-color=191724
-inside-color=1e1e2e
-key-hl-color=b4befe
+inside-color=1f1d2e
+key-hl-color=eb6f92
 separator-color=00000000
 text-color=cdd6f4
 bs-hl-color=3b4befe
@@ -36,7 +36,7 @@ line-clear-color=1e1e2e
 grace=2
 grace-no-mouse
 grace-no-touch
-datestr=%a, %e %b %Y
-timestr=%T
+datestr=%a, %B %e
+timestr=%I:%M %p
 fade-in=0.3
 ignore-empty-password

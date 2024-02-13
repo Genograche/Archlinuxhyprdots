@@ -1,4 +1,4 @@
-@import "themes/tokyonight.css";
+@import "themes/mocha.css";
 * {
     border: none;
     border-radius: 0;
@@ -14,11 +14,10 @@ window#waybar {
 }
 
 tooltip {
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: @crust;
-    background: @base;
+ background: @main-bg;
+    color: @main-fg;
+    border-radius: 7px;
+    border-width: 0px;
 }
 
 #workspaces button {
@@ -51,7 +50,6 @@ tooltip {
 
 #custom-weather,
 #custom-update,
-#clock,
 #mpris,
 #cpu,
 #memory,
@@ -61,7 +59,6 @@ tooltip {
 #pulseaudio,
 #network,
 #workspaces,
-#window,
 #tray,
 #backlight {
     background: @base;
@@ -71,9 +68,14 @@ tooltip {
     border: 1px solid @mantle;
 }
 
-#tray {
-    border-radius: 10px;
-    margin-right: 5px;
+#clock {
+    background: @base;
+    padding: 0px 5px;
+    margin: 3px 0px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border: 1px solid @mantle;
+    border-radius: 10px 0px 0px 10px;
 }
 
 #workspaces {
@@ -83,6 +85,7 @@ tooltip {
     padding-right: 0px;
     padding-left: 5px;
 }
+
 #window{
     border-radius: 10px;
     margin-left: 5px;
@@ -108,6 +111,7 @@ tooltip {
 #temperature {
     color: @peach;
     border-radius: 0px 10px 10px 0px;
+    margin-right: 5px;
 }
 
 #temperature.critical {
@@ -154,11 +158,56 @@ tooltip {
 }
 
 #custom-power {
+    color: @red;
 	background: @base;
-        padding: 0px 5px;
-        margin: 3px 0px;
-        margin-top: 5px;
-        border: 1px solid @mantle;
-	color: @red;
+    padding: 0px 5px;
+    margin: 3px 0px;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 0px 10px 10px 0px;
+    border: 1px solid @mantle;
 	
 }
+
+#custom-notification{
+    background: @base;
+    padding: 0px 5px;
+    margin: 3px 0px;
+    margin-top: 5px;
+    border: 1px solid @mantle;
+  color: @yellow;
+}
+
+#taskbar button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-right: 0px;
+    color: @mauve;
+    animation: tb_normal 20s ease-in-out 1;
+}
+
+#taskbar button.active {
+    background: @flamingo;
+    color: @sky;
+    margin: 3px 0px;
+    margin-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    animation: tb_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover {
+    background: @mauve;
+    color: @peach;
+    animation: tb_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+

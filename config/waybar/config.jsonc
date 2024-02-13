@@ -12,20 +12,22 @@
     "memory",
     "disk",
     "temperature",
-    "hyprland/window"
+   "wlr/taskbar"
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "mpris",
-    "tray",
     //"bluetooth",
     "network",
+    "tray",
     "pulseaudio",
     "pulseaudio#microphone",
     "battery",
+    "custom/notification",
     "backlight",
     "custom/power"
   ],
+ 
   "hyprland/workspaces": {
     "disable-scroll": false,
     "all-outputs": true,
@@ -47,7 +49,8 @@
       "active": "",
       "default": ""
     },
-    "persistent-workspaces": {
+
+  "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
@@ -60,42 +63,65 @@
       "10": []
     }
   },
-  "hyprland/window": {
-    "format": " 󰣇 {}",
-    "on-click": "killall rofi || ~/.config/rofi/scripts/launcher_t7"
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "icon-theme": "Papirus",
+    "spacing": 0,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "Alacritty"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    }
   },
+
   "tray": {
-    "icon-size": 13,
-    "spacing": 10
+    "icon-size": 18,
+    "spacing": 5
   },
+
   "clock": {
-	    "format": " {:%H:%M}",
-  "format-alt": " {:%H:%M   %Y, %d %B, %A}",
-  "tooltip-format": "<tt><small>{calendar}</small></tt>",
-  "calendar": {
-    "mode"          : "year",
-    "mode-mon-col"  : 3,
-    "weeks-pos"     : "right",
-    "on-scroll"     : 1,
-    "format": {
-    "months":     "<span color='#ffead3'><b>{}</b></span>",
-    "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-    "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-    "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-    "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-              }
-              }
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%R 󰃭 %d·%m·%y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
   },
+
   "network": {
-    // "interface": "wlan0", (optional) to focus on the interface
-    "format-wifi": "  {signalStrength}%",
-    "format-ethernet": "  {ipaddr}/{cidr}",
-    "tooltip-format": "{essid} - {ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
-    "on-click-right": "~/.config/waybar/scripts/rofi-wifi-menu"
-  },
+        "tooltip": true,
+        "format-wifi": " ",
+        "format-ethernet": "󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+        "interval": 2,
+         "on-click-right": "~/.config/waybar/scripts/rofi-wifi-menu"
+    },
+
 //  "bluetooth": {
 //    "exec": "~/.config/waybar/scripts/rofi-bluetooth-menu --status",
 //    "format-disabled": "", // an empty format will hide the module
@@ -105,6 +131,7 @@
 //    "tooltip-format-enumerate-connected": "{device_alias}",
 //    "on-click-right": "~/.config/waybar/scripts/rofi-bluetooth-menu"
 //  },
+
   "memory": {
     "interval": 1,
     "format": " {}%",
@@ -115,8 +142,9 @@
   "cpu": {
     "interval": 1,
     "format": " {usage}%",
-    "on-click": "alacritty --start-as=fullscreen --title htop sh -c 'htop'"
+    "on-click": "gnome-system-monitor"
   },
+
   "disk": {
     "interval": 1,
     "format": "󰋊 {percentage_used}%",
@@ -127,6 +155,7 @@
     "tooltip-format": "Disk - {used} used out of {total} on {path} ({percentage_used}%)",
     "on-click": "gnome-system-monitor"
   },
+
   "temperature": {
     "interval": 1,
     "thermal-zone": 0,
@@ -135,6 +164,7 @@
     "format-critical": " {temperatureC}°C",
     "on-click": "gnome-system-monitor"
   },
+
  "battery": {
     "states": {
       "good": 95,
@@ -147,10 +177,12 @@
     "format-alt": "{time} {icon}",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
+
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": " Muted",
     "on-click": "~/.config/waybar/scripts/volume --toggle",
+    "on-click-right": "pavucontrol -t 3",
     "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
     "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
     "scroll-step": 5,
@@ -166,6 +198,7 @@
     "tooltip": true,
     "tooltip-format": "{icon} at {volume}%"
   },
+
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": " {volume}%",
@@ -177,6 +210,7 @@
     "tooltip": true,
     "tooltip-format": " at {volume}%"
   },
+
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
@@ -190,6 +224,7 @@
     "interval": 1,
     "max-length": 60
   },
+
   "backlight": {
     "device": "radeon_bl0",
     "format": "{icon} {percent}%",
@@ -201,10 +236,32 @@
     "on-click": "killall wlsunset",
     "on-click-right": "wlsunset -t 4500 -T 5500"
   },
-"custom/power": {
-  "format": "  ",
-  "tooltip": false,
-  "on-click": "killall rofi || ~/.config/rofi/scripts/powermenu_t5"
+
+ "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂚<span foreground='#F7768E'><sup></sup></span>",
+      "none": "󰂚",
+      "dnd-notification": "󰂛<span foreground='#F7768E'><sup></sup></span>",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󰂚<span foreground='#F7768E'><sup></sup></span>",
+      "inhibited-none": "󰂚",
+      "dnd-inhibited-notification": "󰂛<span foreground='#F7768E'><sup></sup></span>",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "sleep 0.1 && swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
+  },
+
+ "custom/power": {
+   "format": "  ",
+   "tooltip": false,
+   "on-click": "killall rofi || ~/.config/rofi/scripts/powermenu_t5"
   }
 
 }
