@@ -14,7 +14,6 @@ unsetopt correct
 # Sources
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/doc/pkgfile/command-not-found.zsh
 
 ## EXPORT
 export TERM="xterm-256color"                      # getting proper colors
@@ -29,6 +28,26 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 ### "nvim" as manpager
 export MANPAGER="nvim +Man!"
+
+# In case a command is not found, try to find the package that has it
+function command_not_found_handler {
+    local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
+    printf 'zsh: command not found: %s\n' "$1"
+    local entries=( ${(f)"$(/usr/bin/pacman -F --machinereadable -- "/usr/bin/$1")"} )
+    if (( ${#entries[@]} )) ; then
+        printf "${bright}$1${reset} may be found in the following packages:\n"
+        local pkg
+        for entry in "${entries[@]}" ; do
+            local fields=( ${(0)entry} )
+            if [[ "$pkg" != "${fields[2]}" ]] ; then
+                printf "${purple}%s/${bright}%s ${green}%s${reset}\n" "${fields[1]}" "${fields[2]}" "${fields[3]}"
+            fi
+            printf '    /%s\n' "${fields[4]}"
+            pkg="${fields[2]}"
+        done
+    fi
+    return 127
+}
 
 ### Function extract for common file formats ###
 SAVEIFS=$IFS
@@ -115,7 +134,6 @@ alias inm='sudo systemctl restart NetworkManager'
 alias service='sudo systemctl'
 alias vizsh='vim $HOME/.zshrc'
 alias srczsh='source $HOME/.zshrc'
-alias bat='cat'
 
 # Aurhelper
 aurhelper="yay"
@@ -129,12 +147,11 @@ alias l.='eza -a --icons=auto | grep -E "^\."' # hidden files only
 alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 
-
 # pacman and yay
-alias pacsyu='sudo pacman -Syu'                      # update only standard pkgs
-alias update='sudo pacman -Syyu'                    # Refresh pkglist & update standard pkgs
-alias parsua='$aurhelper -Sua'           # update only AUR pkgs (aurhelper)
+alias pacsy='sudo pacman -Sy'                      # update only standard pkgs
+alias update='sudo pacman -Syu'                    # Refresh pkglist & update standard pkgs
 alias fullupdate='$aurhelper -Syu'           # update standard pkgs and AUR pkgs (aurhelper)
+alias parsua='$aurhelper -Sua'           # update only AUR pkgs (aurhelper)
 alias unlock='sudo rm /var/lib/pacman/db.lck'        # remove pacman lock
 alias cleanup='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias pacrm='$aurhelper -Rns' # uninstall package
