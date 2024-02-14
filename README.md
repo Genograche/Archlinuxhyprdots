@@ -64,6 +64,7 @@ reboot
 ```
 
 ## Things to remember(ONLY FOR ME-PERSONAL)
+- themes.css in waybar config is soft linked to apneeded theme in the themes folder(example:ln -s (or -sf)mocha.css themes.css)
 - set default applications $xdg-mime example:($xdg-mime default thunar.desktop inode/directory)
 - bash completion
 - zsh and plugins(starship)
