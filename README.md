@@ -1,7 +1,8 @@
 # Personal Arch Hyprland Configuration by Genograche
 
-![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/showcase/hyprland.png)
-![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/showcase/hyprland-rofi.png)
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/hyprland.png)
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/hyprland-rofi.png)
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/hyprland-notify.png)
 ## Installation
 ## Open Arch Wiki
 Ensure base-devel is installed before proceeding
