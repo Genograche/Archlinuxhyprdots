@@ -24,7 +24,7 @@ cd Arch-hyprlandconfigs
 ### Required Packages
 
 ```
-    yay -S hyprland polkit-gnome ffmpeg neovim viewnior \
+    yay -S hyprland polkit-gnome gnome-keyring seahorse ffmpeg neovim viewnior \
     rofi-lbonn-wayland pavucontrol thunar galculator starship cliphist wl-clipboard \
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice xarchiver thunar-archive-plugin \

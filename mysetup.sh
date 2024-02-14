@@ -39,7 +39,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     exit
 fi
 
-### making directory ###
+### making directories ###
 xdg-user-dirs-update
 mkdir -p ~/Pictures/Screenshots/
 
@@ -48,7 +48,7 @@ read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
     cp -R config/* ~/.config/
-    cp -R cursors/* ~/.local/share/icons/ 
+    cp -R cursors/* ~/.local/share/icons/
     cp -R wallpapers ~/Pictures/
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/xdg-portal-hyprland
