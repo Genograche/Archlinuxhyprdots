@@ -24,7 +24,7 @@ cd Arch-hyprlandconfigs
 ### Required Packages
 
 ```
-    yay -S hyprland polkit-gnome gnome-keyring seahorse gnome-system-monitor \
+    yay -S hyprland polkit-kde-agent gnome-keyring seahorse gnome-system-monitor \
     ffmpeg neovim viewnior rofi-lbonn-wayland pavucontrol thunar galculator \
     starship cliphist wl-clipboard wf-recorder swww waypaper grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
