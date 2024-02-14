@@ -29,8 +29,8 @@ cd Arch-hyprlandconfigs
     wf-recorder swww waypaper grimblast-git ffmpegthumbnailer tumbler gvfs \
     playerctl noise-suppression-for-voice xarchiver thunar-archive-plugin \
     thunar-media-tags-plugin kitty alacritty thunar-volman gvfs-mtp \
-    waybar wlogout swaylock-effects pamixer papirus-icon-theme \
-    nwg-look-bin dunst ttf-firacode-nerd noto-fonts qt5ct qt6ct qt5-wayland \
+    waybar wlogout swaync swaylock-effects pamixer papirus-icon-theme \
+    nwg-look-bin ttf-firacode-nerd noto-fonts qt5ct qt6ct qt5-wayland \
     qt6-wayland noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
     brightnessctl hyprpicker-git pipewire lib32-pipewire wireplumber \
     pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack \
