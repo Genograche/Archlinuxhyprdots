@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iDIR="$HOME/.config/dunst/icons"
+iDIR="$HOME/.config/swaync/icons"
 
 # Get brightness
 get_backlight() {
@@ -13,15 +13,17 @@ get_backlight() {
 # Get icons
 get_icon() {
 	current="$(brightnessctl g)"
-	if [[ ("$current" -ge "0") && ("$current" -le "4800") ]]; then
+	if [[ ("$current" -ge "0") && ("$current" -le "51") ]]; then
 		echo "$iDIR/brightness-20.png"
-	elif [[ ("$current" -ge "4800") && ("$current" -le "9600") ]]; then
+	elif [[ ("$current" -ge "51") && ("$current" -le "102") ]]; then
 		echo "$iDIR/brightness-40.png"
-	elif [[ ("$current" -ge "9600") && ("$current" -le "14400") ]]; then
+	elif [[ ("$current" -ge "102") && ("$current" -le "153") ]]; then
 		echo "$iDIR/brightness-60.png"
-	elif [[ ("$current" -ge "14400") && ("$current" -le "19200") ]]; then
+	elif [[ ("$current" -ge "153") && ("$current" -le "204") ]]; then
 		echo "$iDIR/brightness-80.png"
-	elif [[ ("$current" -ge "19200") && ("$current" -le "24000") ]]; then
+	elif [[ ("$current" -ge "204") && ("$current" -le "254") ]]; then
+		echo "$iDIR/brightness-90.png"
+	elif [[("$current" -ge "255")]]; then
 		echo "$iDIR/brightness-100.png"
 	fi
 }

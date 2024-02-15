@@ -1,66 +1,45 @@
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/genograche/.zshrc'
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-bindkey -v
-# End of lines configured by zsh-newuser-install
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-## reduce time of escaping vi mode
-export KEYTIMEOUT=5
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-## Exporting some things
-export TERM="xterm-256color" 
-export EDITOR="nvim" 
+# Skip all aliases, in lib files and enabled plugins
+zstyle ':omz:*' aliases no
+
+# zsh autocorrect
+unsetopt correct
+#ENABLE_CORRECTION="false"
+
+# Sources
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+## EXPORT
+export TERM="xterm-256color"                      # getting proper colors
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
+#export EDITOR="emacsclient -t -a ''"              # $EDITOR use Emacs in terminal
+export EDITOR="nvim"              # $EDITOR use Emacs in terminal
+#export VISUAL="emacsclient -c -a emacs"           # $VISUAL use Emacs in GUI mode
 # Created by `pipx` on 2024-01-28 20:06:10
 export PATH="$PATH:/home/genograche/.local/bin"
-## starshipconfig
+#starshipconfig
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-## "nvim" as manpager
+
+### "nvim" as manpager
 export MANPAGER="nvim +Man!"
-## setting starship prompt
-eval "$(starship init zsh)"
 
-## command completion
-zstyle ':completion:*' menu select
-zstyle ':completion::complete:*' gain-privileges 1
-
-## historysearch
-#autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
-#zle -N up-line-or-beginning-search
-#zle -N down-line-or-beginning-search
-
-#[[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
-#[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
-
-## prompt theme
-#autoload -Uz promptinit
-#promptinit
-#prompt elite
-
-## pacman -F "command not found" handler
+# In case a command is not found, try to find the package that has it
 function command_not_found_handler {
     local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
     printf 'zsh: command not found: %s\n' "$1"
-    local entries=(
-        ${(f)"$(/usr/bin/pacman -F --machinereadable -- "/usr/bin/$1")"}
-    )
-    if (( ${#entries[@]} ))
-    then
+    local entries=( ${(f)"$(/usr/bin/pacman -F --machinereadable -- "/usr/bin/$1")"} )
+    if (( ${#entries[@]} )) ; then
         printf "${bright}$1${reset} may be found in the following packages:\n"
         local pkg
-        for entry in "${entries[@]}"
-        do
-            # (repo package version file)
-            local fields=(
-                ${(0)entry}
-            )
-            if [[ "$pkg" != "${fields[2]}" ]]
-            then
+        for entry in "${entries[@]}" ; do
+            local fields=( ${(0)entry} )
+            if [[ "$pkg" != "${fields[2]}" ]] ; then
                 printf "${purple}%s/${bright}%s ${green}%s${reset}\n" "${fields[1]}" "${fields[2]}" "${fields[3]}"
             fi
             printf '    /%s\n' "${fields[4]}"
@@ -70,57 +49,7 @@ function command_not_found_handler {
     return 127
 }
 
-## Clear the backbuffer using a key binding
-function clear-screen-and-scrollback() {
-    printf '\x1Bc'
-    zle clear-screen
-}
-
-zle -N clear-screen-and-scrollback
-bindkey '^L' clear-screen-and-scrollback
-
-## remapping run-help to help
-autoload -Uz run-help
-(( ${+aliases[run-help]} )) && unalias run-help
-alias help=run-help
-autoload -Uz run-help-git run-help-ip run-help-openssl run-help-p4 run-help-sudo run-help-svk run-help-svn
-
-## Filemanger like keybinds
-cdUndoKey() {
-  popd
-  zle       reset-prompt
-  print
-  ls
-  zle       reset-prompt
-}
-
-cdParentKey() {
-  pushd ..
-  zle      reset-prompt
-  print
-  ls
-  zle       reset-prompt
-}
-
-zle -N                 cdParentKey
-zle -N                 cdUndoKey
-bindkey '^[[1;3A'      cdParentKey
-bindkey '^[[1;3D'      cdUndoKey
-
-## Clear the backbuffer using a key binding
-function clear-screen-and-scrollback() {
-    printf '\x1Bc'
-    zle clear-screen
-}
-
-zle -N clear-screen-and-scrollback
-bindkey '^L' clear-screen-and-scrollback
-
-## Fish-like syntax highlighting and autosuggestions
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-## Function extract for common file formats
+### Function extract for common file formats ###
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
@@ -162,6 +91,42 @@ fi
 }
 IFS=$SAVEIFS
 
+### SETTING THE STARSHIP PROMPT ###
+eval "$(starship init zsh)"
+
+# Set name of the theme
+ZSH_THEME=""
+
+# Uncomment one of the following lines to change the auto-update behavior
+ zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
 ## Alias
 # some useful alias
 alias history='history 1'
@@ -189,9 +154,8 @@ alias fullupdate='$aurhelper -Syu'           # update standard pkgs and AUR pkgs
 alias parsua='$aurhelper -Sua'           # update only AUR pkgs (aurhelper)
 alias unlock='sudo rm /var/lib/pacman/db.lck'        # remove pacman lock
 alias cleanup='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias pacrm='sudo pacman -Rns' # uninstall package
-alias pacin='sudo pacman -S' # install pkg
-alias yay='yay -S'
+alias pacrm='$aurhelper -Rns' # uninstall package
+alias pacin='$aurhelper -S' # install pkg
 alias pl='$aurhelper -Qs' # list installed package
 alias search='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
@@ -280,4 +244,3 @@ alias sudo="sudo "
 
 #some scripts
 alias wlprop="./.config/hypr/scripts/wlprop"
-

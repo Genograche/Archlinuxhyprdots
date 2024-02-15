@@ -12,7 +12,7 @@
     "memory",
     "disk",
     "temperature",
-   "wlr/taskbar"
+    "wlr/taskbar"
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
@@ -175,7 +175,8 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    //"on-click-right": 
   },
 
   "pulseaudio": {
