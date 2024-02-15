@@ -1,4 +1,5 @@
-config_file=~/.config/hypr/keybind.conf
-keybinds=$(grep -oP '(?<=bind = ).*' $config_file)
-keybinds=$(echo "$keybinds" | sed 's/,\([^,]*\)$/ = \1/' | sed 's/, exec//g' | sed 's/^,//g')
-rofi -dmenu -p "Keybinds" -theme ~/.config/rofi/launchers/type-7/style-10.rasi <<< "$keybinds"
+#!/bin/sh
+
+config_file="$HOME/.config/hypr/keybind.conf"
+keybinds=$(grep -oP '(?<=bind = ).*' "$config_file" | sed 's/,\([^,]*\)$/=\1/' | sed 's/,exec//g' | sed 's/^,//g')
+echo "$keybinds" | rofi -dmenu -p "Keybinds" -theme "$HOME/.config/rofi/launchers/type-7/style-10.rasi"
