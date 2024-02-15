@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 iDIR="$HOME/.config/swaync/icons"
 
@@ -12,44 +12,48 @@ get_backlight() {
 
 # Get icons
 get_icon() {
-	current="$(brightnessctl g)"
-	if [[ ("$current" -ge "0") && ("$current" -le "51") ]]; then
-		echo "$iDIR/brightness-20.png"
-	elif [[ ("$current" -ge "51") && ("$current" -le "102") ]]; then
-		echo "$iDIR/brightness-40.png"
-	elif [[ ("$current" -ge "102") && ("$current" -le "153") ]]; then
-		echo "$iDIR/brightness-60.png"
-	elif [[ ("$current" -ge "153") && ("$current" -le "204") ]]; then
-		echo "$iDIR/brightness-80.png"
-	elif [[ ("$current" -ge "204") && ("$current" -le "254") ]]; then
-		echo "$iDIR/brightness-90.png"
-	elif [[("$current" -ge "255")]]; then
-		echo "$iDIR/brightness-100.png"
-	fi
+  current="$(brightnessctl g)"
+  if [ "$current" -ge 0 ] && [ "$current" -le 51 ]; then
+    echo "$iDIR/brightness-20.png"
+  elif [ "$current" -ge 51 ] && [ "$current" -le 102 ]; then
+    echo "$iDIR/brightness-40.png"
+  elif [ "$current" -ge 102 ] && [ "$current" -le 153 ]; then
+    echo "$iDIR/brightness-60.png"
+  elif [ "$current" -ge 153 ] && [ "$current" -le 204 ]; then
+    echo "$iDIR/brightness-80.png"
+  elif [ "$current" -ge 204 ] && [ "$current" -le 254 ]; then
+    echo "$iDIR/brightness-90.png"
+  elif [ "$current" -ge 255 ]; then
+    echo "$iDIR/brightness-100.png"
+  fi
 }
 
-# Notify
 notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Brightness : $(get_backlight)"
+  icon=$(get_icon)
+  brightness=$(get_backlight)
+  notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$icon" "Brightness : $brightness"
 }
 
-# Increase brightness
 inc_backlight() {
-	brightnessctl set 10%+ && get_icon && notify_user
+  brightnessctl set 10%+ && notify_user
 }
 
-# Decrease brightness
 dec_backlight() {
-	brightnessctl set 10%- && get_icon && notify_user
+  brightnessctl set 10%- && notify_user
 }
 
-# Execute accordingly
-if [[ "$1" == "--get" ]]; then
-	brightnessctl g
-elif [[ "$1" == "--inc" ]]; then
-	inc_backlight
-elif [[ "$1" == "--dec" ]]; then
-	dec_backlight
-else
-	get_backlight
-fi
+case "$1" in
+  --get)
+    brightnessctl g
+    ;;
+  --inc)
+    inc_backlight
+    ;;
+  --dec)
+    dec_backlight
+    ;;
+  *)
+    get_backlight
+    ;;
+esac
+
