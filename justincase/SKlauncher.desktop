@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Type=Application
+Name=SKlauncher
+Icon=minecraft
+Exec=java -jar SKlauncher.jar
+Categories=Game
+Comment=
+Path=/home/genograche/Games/Java/
+Terminal=false
+StartupNotify=false

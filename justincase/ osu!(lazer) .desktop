@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=osu!(lazer)
+Icon=osu
+Exec=./osu.AppImage
+Categories=Game
+Comment=the bestest free-to-win rhythm game
+Path=/home/genograche/Games/Appimage
+Terminal=false
+StartupNotify=false
