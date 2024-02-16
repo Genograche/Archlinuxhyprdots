@@ -1,6 +1,6 @@
 #!/bin/sh
 
-HYPRLAND_DEVICE="elan1300:00-04f3:3087-touchpad"
+HYPRLAND_DEVICE="SynPS/2 Synaptics TouchPad"
 
 if [ -z "$XDG_RUNTIME_DIR" ]; then
   export XDG_RUNTIME_DIR=/run/user/$(id -u)
@@ -24,12 +24,24 @@ disable_touchpad() {
   hyprctl keyword "device:$HYPRLAND_DEVICE:enabled" false
 }
 
+# Add debug statement
+echo "STATUS_FILE: $STATUS_FILE"
+
 if ! [ -f "$STATUS_FILE" ]; then
+  echo "Status file not found, enabling touchpad"
   enable_touchpad
 else
-  if [ $(cat "$STATUS_FILE") = "true" ]; then
+  current_status=$(cat "$STATUS_FILE")
+  echo "Current status: $current_status"
+
+  if [ "$current_status" = "true" ]; then
+    echo "Touchpad is currently enabled, disabling it"
     disable_touchpad
-  elif [ $(cat "$STATUS_FILE") = "false" ]; then
+  elif [ "$current_status" = "false" ]; then
+    echo "Touchpad is currently disabled, enabling it"
     enable_touchpad
+  else
+    echo "Unknown status found: $current_status"
   fi
 fi
+
