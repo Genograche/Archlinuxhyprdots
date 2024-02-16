@@ -1,10 +1,11 @@
 github-cli(gh)
 git
 (modify or add)
+git clone
 gh auth login
-git clone user.email "" && git clone user.username ""
+git user.email "" && git clone user.username ""
 git add (files)
-git rm -r (files)
+git rm -r (files) && git mv && git cp
 git commit -a -m 'Minor change in vimrc'
 git push
 git pull
