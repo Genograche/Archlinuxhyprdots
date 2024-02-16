@@ -26,7 +26,7 @@ read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     yay -S hyprland polkit-kde-agent gnome-keyring seahorse gnome-system-monitor \
     ffmpeg neovim viewnior rofi-lbonn-wayland pavucontrol thunar galculator \
-    starship cliphist wl-clipboard wf-recorder swww waypaper grimblast-git \
+    starship cliphist wl-clipboard swww waypaper grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
     xarchiver thunar-archive-plugin thunar-media-tags-plugin kitty alacritty \
     thunar-volman gvfs-mtp waybar swaync swaylock-effects pamixer \
