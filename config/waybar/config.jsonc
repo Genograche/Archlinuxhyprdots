@@ -47,9 +47,9 @@
       "8": "➑",
       "9": "➒",
       "10": "➓",
-      "active": "",
-      "default": ""
-    },
+      "active": "󰮯",
+      "default": "󰊠"
+  },
 
   "persistent-workspaces": {
       "1": [],
@@ -87,11 +87,12 @@
   },
 
   "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "󰥔",
-            "deactivated": ""
-        }
+    "format": "{icon}",
+    "start-activated": true,
+    "format-icons": {
+      "activated": "󰥔",
+      "deactivated": ""
+      }
   },
 
   "clock": {
@@ -129,7 +130,7 @@
         "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2,
          "on-click-right": "~/.config/waybar/scripts/rofi-wifi-menu"
-    },
+  },
 
 //  "bluetooth": {
 //    "exec": "~/.config/waybar/scripts/rofi-bluetooth-menu --status",

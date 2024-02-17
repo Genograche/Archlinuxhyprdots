@@ -22,12 +22,12 @@ tooltip {
 
 #workspaces button {
     padding: 5px;
-    color: @red;
+    color: @green;
     margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: @lavender;
+    color: @orange;
 }
 
 #workspaces button.focused {
@@ -98,8 +98,9 @@ tooltip {
 }
 
 #idle_inhibitor{
-  color: @orange;
+    color: @orange;
 }
+
 #cpu {
     color: @teal;
 }
