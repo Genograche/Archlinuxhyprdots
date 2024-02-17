@@ -8,6 +8,7 @@
   "height": 0,
   "modules-left": [
     "clock",
+    "idle_inhibitor",
     "cpu",
     "memory",
     "disk",
@@ -83,6 +84,14 @@
   "tray": {
     "icon-size": 18,
     "spacing": 5
+  },
+
+  "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰥔",
+            "deactivated": ""
+        }
   },
 
   "clock": {

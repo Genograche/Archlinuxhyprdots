@@ -51,6 +51,7 @@ tooltip {
 #custom-weather,
 #custom-update,
 #mpris,
+#idle_inhibitor,
 #cpu,
 #memory,
 #disk,
@@ -96,6 +97,9 @@ tooltip {
     color: @lavender;
 }
 
+#idle_inhibitor{
+  color: @orange;
+}
 #cpu {
     color: @teal;
 }
