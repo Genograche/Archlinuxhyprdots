@@ -48,6 +48,7 @@
       "9": "➒",
       "10": "➓",
       "active": "󰮯",
+      "urgent": "",
       "default": "󰊠"
   },
 
@@ -129,7 +130,7 @@
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2,
-         "on-click-right": "~/.config/waybar/scripts/rofi-wifi-menu"
+         "on-click-right": "~/.config/waybar/scripts/network.py"
   },
 
 //  "bluetooth": {
@@ -147,7 +148,8 @@
     "format": " {}%",
     "tooltip": true,
     "tooltip-format": "Memory - {used:0.1f}GB used",
-    "on-click": "gnome-system-monitor"
+    "on-click": "gnome-system-monitor",
+    "on-click-right": "kitty --start-as=fullscreen --title htop sh -c 'htop'"
   },
   "cpu": {
     "interval": 1,
@@ -271,7 +273,7 @@
  "custom/power": {
    "format": "  ",
    "tooltip": false,
-   "on-click": "killall rofi || ~/.config/rofi/scripts/powermenu_t5"
+   "on-click": "killall rofi || ~/.config/rofi/powermenu/type-5/powermenu.sh"
   }
 
 }

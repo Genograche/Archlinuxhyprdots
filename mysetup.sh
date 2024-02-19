@@ -41,8 +41,11 @@ else
 fi
 
 ### making directories ###
+echo -e "Making needed directories.\n"
 xdg-user-dirs-update
 mkdir -p ~/Pictures/Screenshots/
+mkdir -p ~/.local/share/fonts/
+echo -e "Done!"
 
 ### Copy Config Files ###
 read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
@@ -51,10 +54,12 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R config/* ~/.config/
     cp -R cursors/* ~/.local/share/icons/
     cp -R Wallpapers ~/Pictures/
+    cp -R fonts/* ~/.local/share/fonts/
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/scripts/*
     chmod +x ~/.config/waybar/scripts/*
     echo -e "If rofi does not work,look at its permissions.\n"
+    fc-cache -fv
   else 
     exit
 fi
