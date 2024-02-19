@@ -50,7 +50,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
     cp -R config/* ~/.config/
     cp -R cursors/* ~/.local/share/icons/
-    cp -R wallpapers ~/Pictures/
+    cp -R Wallpapers ~/Pictures/
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/scripts/*
     chmod +x ~/.config/waybar/scripts/*

@@ -90,8 +90,8 @@
     "format": "{icon}",
     "start-activated": true,
     "format-icons": {
-      "activated": "󰥔",
-      "deactivated": ""
+      "activated": "",
+      "deactivated": ""
       }
   },
 

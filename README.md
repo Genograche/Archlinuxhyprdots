@@ -50,7 +50,7 @@ mkdir -p ~/Pictures/Screenshots/
 ```
     cp -R config/* ~/.config/
     cp -R cursors/* ~/.local/share/icons/
-    cp -R wallpapers ~/Pictures/
+    cp -R Wallpapers ~/Pictures/
 ```
 
 ## Set some files as executables
