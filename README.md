@@ -59,6 +59,18 @@ chmod +x ~/.config/hypr/scripts/*
 chmod +x ~/.config/waybar/scripts/*
 ```
 
+## Enable zram
+```
+sudo pacman -S zram-generator
+touch /etc/systemd/zram-generator.config
+```
+- copy config from zram [Archwiki](https://wiki.archlinux.org/title/Zram)
+- Run daemon-reload, then start your configured systemd-zram-setup@zramN.service instance(s).
+- Check zram swap staus
+```
+zramctl
+```
+
 ## Reboot
 ```
 reboot
