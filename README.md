@@ -36,7 +36,7 @@ cd Arch-hyprlandconfigs
     qt5ct qt6ct qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
     pipewire lib32-pipewire wireplumber pipewire-audio pipewire-pulse \
     pipewire-alsa pipewire-jack lib32-pipewire-jack xdg-user-dirs \
-    xdg-desktop-portal-hyprland catppuccin-gtk-theme-mocha --needed
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk catppuccin-gtk-theme-mocha --needed
 ```
 ## Update user directories
 ```
