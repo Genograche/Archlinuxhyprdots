@@ -6,7 +6,7 @@
 ![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/powermenu.png)
 
 ## Installation
-## Open ![Arch Wiki](https://wiki.archlinux.org)
+## Open [Arch Wiki](https://wiki.archlinux.org)
 Ensure base-devel is installed before proceeding
 
 ### Yay
