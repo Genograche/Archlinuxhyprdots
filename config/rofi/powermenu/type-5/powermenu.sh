@@ -72,7 +72,8 @@ run_cmd() {
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
 			amixer set Master mute
-			systemctl suspend
+			swaylock
+      systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			hyprctl dispatch exit 0
 		fi
@@ -96,7 +97,7 @@ case ${chosen} in
     $lock)
 		if [[ -x '/usr/bin/swaylock' ]]; then
 			swaylock
-                elif [[ -x '/usr/bin/betterlockscreen' ]]; then
+        elif [[ -x '/usr/bin/betterlockscreen' ]]; then
 			betterlockscreen -l
 		fi
         ;;
