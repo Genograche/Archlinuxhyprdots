@@ -1,10 +1,12 @@
 # Personal Arch Hyprland Configuration by Genograche
 
 ![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/hyprland.png)
-![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/hyprland-rofi.png)
-![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/hyprland-notify.png)
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/applauncher.png)
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/notification.png)
+![Screenshot](https://github.com/Genograche/Arch-hyprlandconfigs/raw/main/preview/powermenu.png)
+
 ## Installation
-## Open Arch Wiki
+## Open ![Arch Wiki](https://wiki.archlinux.org)
 Ensure base-devel is installed before proceeding
 
 ### Yay
@@ -143,8 +145,9 @@ winetricks xact
 
 ## Base config from RumiAxalotl
 [RumiAxolotl](https://github.com/RumiAxolotl)
-## Rofi config from adi1090x
+## Rofi configs and styles from adi1090x and Axenide
 [adi1090x](https://github.com/adi1090x)
+[Axenide](https://github.com/Axenide)
 ## Sddm theme from MarianArlt 
 [MarianArlt](https://github.com/MarianArlt)
 ## Grub theme from vinceliuce 
