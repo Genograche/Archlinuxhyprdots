@@ -21,7 +21,7 @@ makepkg -si
 ### Clone the repo
 
 ```
-git clone https://github.com/Genograche/Arch-hyprlandconfigs.git
+git clone https://github.com/Genograche/Archlinuxhyprdots.git
 cd Arch-hyprlandconfigs
 ```
 ### Required Packages
