@@ -79,6 +79,10 @@ reboot
 ```
 
 ## Things to remember(ONLY FOR ME-PERSONAL)
+- Get fastest mirrors with
+```
+reflector --sort rate --protocol http,https --save /etc/pacman.d/mirrorlist
+```
 - I removed wf-recorder
 - themes.css in waybar config is soft linked to apneeded theme in the themes folder(example:ln -s (or -sf)mocha.css themes.css)
 - set default applications $xdg-mime example:($xdg-mime default thunar.desktop inode/directory)
