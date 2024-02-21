@@ -11,7 +11,7 @@ Ensure base-devel is installed before proceeding
 
 ### Install an aur helper like [Yay](https://github.com/Jguer/yay) or [Paru](https://github.com/Morganamilo/paru)
 
-**Important**: Execute the following commands as a regular user, NOT as root!
+**Important**: Execute the following commands as a regular user, NOT as root!\
 **Installing yay:**
 ```
 git clone https://aur.archlinux.org/yay.git
