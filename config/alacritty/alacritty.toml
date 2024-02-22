@@ -6,7 +6,7 @@ import = [
 TERM = "xterm-256color"
 
 [font]
-size = 16.0
+size = 15.0
 
 [font.bold]
 family = "FiraCode Nerd Font Mono"
@@ -117,7 +117,7 @@ history = 5000
 
 [window]
 dynamic_padding = true
-opacity = 0.8
+opacity = 0.6
 title = "Alacritty"
 
 [window.class]
