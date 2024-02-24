@@ -32,7 +32,7 @@ cd Arch-hyprlandconfigs
     starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
     xarchiver thunar-archive-plugin thunar-media-tags-plugin kitty alacritty \
-    thunar-volman gvfs-mtp waybar swaync swaylock-effects pamixer \
+    thunar-volman gvfs-mtp waybar swaync swaidle swaylock-effects pamixer \
     papirus-icon-theme nwg-look-bin ttf-firacode-nerd noto-fonts \
     noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
     qt5ct qt6ct qt5-wayland qt6-wayland brightnessctl hyprpicker-git \

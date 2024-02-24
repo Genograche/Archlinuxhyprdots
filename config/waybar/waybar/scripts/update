@@ -1,0 +1,38 @@
+#!/bin/sh
+# If the operating system is not Arch Linux, exit the script successfully
+if [ ! -f /etc/arch-release ]; then
+    exit 0
+fi
+
+# Calculate updates for each service
+AUR=$(yay -Qua | wc -l)
+OFFICIAL=$(pacman -Qu | wc -l)
+
+# Case/switch for each service updates
+case $1 in
+    aur) printf " %s\n" "$AUR";;
+    official) printf " %s\n" "$OFFICIAL";;
+esac
+
+# If the parameter is "update", update all services
+if [ "$1" = "update" ]; then
+    alacritty --title update-system sh -c 'yay -Syu'
+fi
+
+# If there aren't any parameters, return the total number of updates
+if [ "$1" = "" ]; then
+    # Calculate total number of updates
+    COUNT=$((OFFICIAL+AUR))
+    # If there are updates, the script will output the following:   Updates
+    # If there are no updates, the script will output nothing.
+
+    if [ "$COUNT" -eq 0 ]; then
+        printf "\n"
+    else
+        # This Update symbol is RTL. So &#x202d; is left-to-right override.
+        printf " \n"
+    fi
+    exit 0
+fi
+
+
