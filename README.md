@@ -53,8 +53,11 @@ mkdir -p ~/Pictures/Screenshots/
     cp -R config/* ~/.config/
     cp -R cursors/* ~/.local/share/icons/
     cp -R Wallpapers ~/Pictures/
+    cp -R fonts ~/.local/share/
 ```
-
+```
+fc-cache -fv
+```
 ## Set some files as executables
 ```
 chmod +x ~/.config/hypr/scripts/*
@@ -125,7 +128,6 @@ export LIBVA_DRIVER_NAME=radeonsi
 
 ## Ignore the following if dhcpcd is not installed
 
-- IF dhcpcd is installed and startup is slow then save
 ```
 sudo systemctl enable dhcpcd@(ip link your interface name).service
 ```

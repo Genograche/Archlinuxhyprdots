@@ -9,7 +9,7 @@ else
     echo -e "$CWR - Yay was NOT located"
     read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install yay (y,n) ' INSTYAY
     if [[ $INSTYAY == "Y" || $INSTYAY == "y" ]]; then
-        git clone https://aur.archlinux.org/yay.git &>> $INSTLOG
+        git clone https://aur.archlinux.org/yay-bin.git &>> $INSTLOG
         cd yay
         makepkg -si --noconfirm &>> ../$INSTLOG
         cd ..
@@ -44,7 +44,6 @@ fi
 echo -e "Making needed directories.\n"
 xdg-user-dirs-update
 mkdir -p ~/Pictures/Screenshots/
-mkdir -p ~/.local/share/fonts/
 echo -e "Done!"
 
 ### Copy Config Files ###
@@ -54,7 +53,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R config/* ~/.config/
     cp -R cursors/* ~/.local/share/icons/
     cp -R Wallpapers ~/Pictures/
-    cp -R fonts/* ~/.local/share/fonts/
+    cp -R fonts ~/.local/share/
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/scripts/*
     chmod +x ~/.config/waybar/scripts/*
