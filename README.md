@@ -154,10 +154,6 @@ winetricks xact
 ## Rofi configs and styles from adi1090x and Axenide
 [adi1090x](https://github.com/adi1090x)\
 [Axenide](https://github.com/Axenide)
-## Sddm theme from MarianArlt 
-[MarianArlt](https://github.com/MarianArlt)
-## Grub theme from vinceliuce 
-[vinceliuice](https://github.com/vinceliuice)
 ## The rest from Archwiki and Hyprlandwiki
 [Archwiki](https://wiki.archlinux.org/)\
 [Hyprland](https://wiki.hyprland.org/)
