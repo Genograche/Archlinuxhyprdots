@@ -6,16 +6,19 @@
 #  └┐┌┘├─┤├┬┘└─┐
 #   └┘ ┴ ┴┴└─└─┘
 export VISUAL="${EDITOR}"
-#export TERM="xterm-256color"
+export TERM="xterm-256color"
+
 ## setting starship prompt
 export STARSHIP_CONFIG=~/.config/starship/starship.toml 
 eval "$(starship init zsh)"
-## "nvim" as manpager
+
+## exporting some variables
 export MANPAGER="nvim +Man!"
 export EDITOR='nvim'
 export TERM='alacritty'
 export TERMINAL='alacritty'
 export BROWSER='firefox'
+export FILEMANAGER='Thunar'
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 
 if [ -d "$HOME/.local/bin" ] ;
@@ -196,6 +199,7 @@ bindkey '^[[1;3D'      cdUndoKey
 alias mirrors="sudo reflector --verbose --latest 5 --country 'United States' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
 
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias mkinit-update="sudo mkinitcpio -P"
 alias mantenimiento="yay -Sc && sudo pacman -Scc"
 alias purga="sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av"
 alias update="paru -Syu --nocombinedupgrade"
@@ -209,8 +213,9 @@ alias musica="ncmpcpp"
 alias history='history 1'
 alias inm='sudo systemctl restart NetworkManager'
 alias service='sudo systemctl'
-alias vizsh='vim $HOME/.zshrc'
+alias vizsh='vi $HOME/.zshrc'
 alias srczsh='source $HOME/.zshrc'
+alias visu='sudo nvim'
 
 # Aurhelper
 aurhelper="yay"
@@ -225,10 +230,10 @@ alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 
 # pacman and yay
-alias pacsy='sudo pacman -Sy'                      # update only standard pkgs
-alias update='sudo pacman -Syu'                    # Refresh pkglist & update standard pkgs
+alias pacsy='sudo pacman -Syy'               # Refresh pkglist 
+alias update='sudo pacman -Syu'              # Refresh pkglist & update standard pkgs
 alias fullupdate='$aurhelper -Syu'           # update standard pkgs and AUR pkgs (aurhelper)
-alias parsua='$aurhelper -Sua'           # update only AUR pkgs (aurhelper)
+alias parsua='$aurhelper -Sua'               # update only AUR pkgs (aurhelper)
 alias unlock='sudo rm /var/lib/pacman/db.lck'        # remove pacman lock
 alias cleanup='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
 alias pacrm='sudo pacman -Rns' # uninstall package
@@ -236,7 +241,7 @@ alias pacin='sudo pacman -S' # install pkg
 alias pl='$aurhelper -Qs' # list installed package
 alias search='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
-
+alias ruk0='sudo paccache -ruk0' # remove uninstalled pkg cache using paccache
 # Handy change dir shortcuts
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -318,6 +323,8 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 #to make alias work after sudo
 alias sudo="sudo "
+
+alias pvpn="sudo openvpn /etc/openvpn/protonvpn/jp-free-305010.protonvpn.udp.ovpn"
 
 #some scripts
 alias wlprop="./.config/hypr/scripts/wlprop"
