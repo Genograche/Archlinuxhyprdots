@@ -81,7 +81,7 @@ zramctl
 reboot
 ```
 
-## Things to remember(ONLY FOR ME-PERSONAL)
+## Important Things to remember(ONLY FOR ME-PERSONAL)
 - Get fastest mirrors with
 ```
 reflector --sort rate --protocol http,https --save /etc/pacman.d/mirrorlist
@@ -109,15 +109,22 @@ pactl info
 - Check xdg-desktop-portal-hyprland(obs)
 - Blootooth?,Task manager?,powertop?
 - wine,lutris
-- For my amd graphics driver if needed set the following kernal parameters(/etc/default/grub)
+- check for amdgpu kernal driver instead of radeon
+```
+lspci -k | grep -A 3 -E "(VGA|3D|Display)"
+```
+- For my amd graphics driver if amdgpu kernal driver is not used set the following kernal parameters(/etc/default/grub)
 ```
 radeon.si_support=0 amdgpu.si_support=1
 radeon.cik_support=0 amdgpu.cik_support=1
 ```
-- check for amdgpu kernal driver instead of radeon
+- If discrete gpu is not properly working,then set the following kernal parameter(this will prevent the dGPU from being powered down dynamically at runtime.
+)
 ```
-lspci -k
+amdgpu.runpm=0
 ```
+-Then update grub
+
 - For my amd,if needed for vdapu,set env variables in /etc/profile
 ```
 export VDPAU_DRIVER=radeonsi
