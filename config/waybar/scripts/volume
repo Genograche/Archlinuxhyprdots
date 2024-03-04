@@ -1,6 +1,6 @@
 #!/bin/sh
 
-iDIR="$HOME/.config/swaync/icons"
+iDIR="$HOME/.config/waybar/icons"
 
 # Get Volume
 get_volume() {
