@@ -1,24 +1,25 @@
 /* https://github.com/Axenide/Dotfiles */
 
-@define-color cc-bg #000000;
+@define-color cc-bg #191919;
 @define-color noti-border-color #47423E;
-@define-color noti-bg #000000;
-@define-color noti-bg-darker #0A0B0C;
-@define-color noti-bg-hover #0A0B0C;
-@define-color noti-bg-focus #0A0B0C;
+@define-color noti-bg #121212;
+@define-color noti-bg-darker #121212;
+@define-color noti-bg-hover #000000;
+@define-color noti-bg-focus #000000;
 @define-color noti-close-bg #1B1D1D;
-@define-color noti-close-bg-hover #2E3030;
+@define-color noti-close-bg-hover #000000;
 @define-color text-color #E0CDA5;
 @define-color text-color-disabled #928374;
 @define-color bg-selected #1B1D1D;
 
-@define-color black     #47423E;
-@define-color red       #DB4740;
-@define-color green     #A1A740;
-@define-color yellow    #DF9238;
-@define-color blue      #619A96;
-@define-color purple    #C27491;
-@define-color aqua      #79A976;
+
+@define-color black     #1C1B19;
+@define-color red       #F75341;
+@define-color green     #519F50;
+@define-color yellow    #FBB829;
+@define-color blue      #2C78BF;
+@define-color purple    #E02C6D;
+@define-color aqua      #0AAEB3;
 @define-color gray      #BEAC8E;
 @define-color brgray    #928374;
 @define-color brred     #F3594B;
@@ -27,7 +28,7 @@
 @define-color brblue    #80AA9E;
 @define-color brpurple  #D3869B;
 @define-color braqua    #8CBA7F;
-@define-color white     #E0CDA5;
+@define-color white     #BAA67F;
 @define-color bg2       #504945;
 
 * {
@@ -199,7 +200,7 @@
     font-weight: bold;
     font-style: italic;
     background: transparent;
-    color: @red;
+    color: @purple;
     margin-left: 10px;
     /* text-shadow: 0 0 3px @red; */
 }
@@ -209,7 +210,7 @@
     font-weight: bold;
     font-style: italic;
     background: transparent;
-    color: @brgreen;
+    color: @blue;
     text-shadow: none;
     margin-right: 10px
 }
@@ -255,7 +256,7 @@
 }
 
 .widget-title {
-    color: @red;
+    color: #2f88ff;
     margin: 20px 20px 5px 20px;
     font-size: 11pt;
     font-weight: bold;
@@ -267,7 +268,7 @@
     font-size: initial;
     font-weight: bold;
     font-family: 'Symbols Nerd Font';
-    color: @brgreen;
+    color: @purple;
     text-shadow: none;
     background: @noti-bg;
     border: 1px solid @noti-border-color;
@@ -290,7 +291,7 @@
 .widget-dnd>switch {
     font-size: initial;
     border-radius: 999px;
-    background: @black;
+    background: @gray;
     /* border: 1px solid @bgblack; */
     box-shadow: none;
     padding: 1px;
@@ -298,7 +299,7 @@
 }
 
 .widget-dnd>switch:checked {
-    background: @white
+    background: @purple
 }
 
 .widget-dnd>switch slider {
@@ -416,3 +417,5 @@
 .widget-inhibitors>button:hover {
     background: @noti-bg-hover
 }
+
+

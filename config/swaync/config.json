@@ -24,12 +24,12 @@
     "widgets": [
         "title",
         "dnd",
-        "mpris",
-        "notifications"
+        "notifications",
+        "mpris"
     ],
     "widget-config": {
         "title": {
-            "text": "Notifications",
+            "text": "󰂚  :: Notifications",
             "clear-all-button": true,
             "button-text": "󰎟 "
         },
@@ -49,6 +49,30 @@
         },
         "backlight": {
             "label": "󰃟 "
+        },
+        "buttons-grid": {
+            "actions": [
+                {
+                    "label": "󰔏",
+                    "command": "hyprshade toggle redshift"
+                },
+                {
+                    "label": "󰌵",
+                    "command": "hyprshade toggle dim"
+                },
+                {
+                    "label": "󰊠",
+                    "command": "hyprshade toggle grayscale"
+                },
+                {
+                    "label": "󰏘",
+                    "command": "hyprshade toggle vibrance"
+                },
+                {
+                    "label": "󰌁",
+                    "command": "hyprshade toggle invert"
+                }
+            ]
         }
-        }
+    }
 }

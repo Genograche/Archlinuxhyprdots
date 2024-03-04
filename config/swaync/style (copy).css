@@ -1,16 +1,29 @@
+/*     ___                    _     __    _       */
+/*    /   |  _  _____  ____  (_)___/ /__ ( )_____ */
+/*   / /| | | |/_/ _ \/ __ \/ / __  / _ \|// ___/ */
+/*  / ___ |_>  </  __/ / / / / /_/ /  __/ (__  )  */
+/* /_/  |_/_/|_|\___/_/ /_/_/\__,_/\___/ /____/   */
+/*    _____                     _   ________      */
+/*   / ___/      ______ ___  __/ | / / ____/      */
+/*   \__ \ | /| / / __ `/ / / /  |/ / /           */
+/*  ___/ / |/ |/ / /_/ / /_/ / /|  / /___         */
+/* /____/|__/|__/\__,_/\__, /_/ |_/\____/         */
+/*                    /____/                      */
+
 /* https://github.com/Axenide/Dotfiles */
 
-@define-color cc-bg #000000;
+@define-color cc-bg #191919;
 @define-color noti-border-color #47423E;
-@define-color noti-bg #000000;
-@define-color noti-bg-darker #0A0B0C;
-@define-color noti-bg-hover #0A0B0C;
-@define-color noti-bg-focus #0A0B0C;
+@define-color noti-bg #121212;
+@define-color noti-bg-darker #121212;
+@define-color noti-bg-hover #000000;
+@define-color noti-bg-focus #000000;
 @define-color noti-close-bg #1B1D1D;
-@define-color noti-close-bg-hover #2E3030;
+@define-color noti-close-bg-hover #000000;
 @define-color text-color #E0CDA5;
 @define-color text-color-disabled #928374;
 @define-color bg-selected #1B1D1D;
+
 
 @define-color black     #47423E;
 @define-color red       #DB4740;
@@ -255,7 +268,7 @@
 }
 
 .widget-title {
-    color: @red;
+    color: #2f88ff;
     margin: 20px 20px 5px 20px;
     font-size: 11pt;
     font-weight: bold;
