@@ -91,8 +91,8 @@ reboot
 ```
 reflector --sort rate --protocol http,https --save /etc/pacman.d/mirrorlist
 ```
-- themes.css in waybar config is soft linked to apneeded theme in the themes folder(example:ln -s (or -sf)mocha.css themes.css)
-- set default applications $xdg-mime default nautilus.desktop inode/directory
+- themes.css in waybar config is soft linked to the desired theme in the themes folder(example:ln -s (or -sf)mocha.css themes.css)
+- set default file manger $xdg-mime default thunar.desktop inode/directory
 - bash completion
 - zsh and plugins(starship)
 - all noto fonts
