@@ -64,7 +64,7 @@ chmod +x ~/.config/hypr/scripts/*
 chmod +x ~/.config/waybar/scripts/*
 ```
 
-## Enable zram
+## Enable zram (Ignore if archinstall script is used)
 ```
 sudo pacman -S zram-generator
 touch /etc/systemd/zram-generator.config
@@ -86,7 +86,6 @@ reboot
 ```
 reflector --sort rate --protocol http,https --save /etc/pacman.d/mirrorlist
 ```
-- I removed wf-recorder
 - themes.css in waybar config is soft linked to apneeded theme in the themes folder(example:ln -s (or -sf)mocha.css themes.css)
 - set default applications $xdg-mime default nautilus.desktop inode/directory
 - bash completion
