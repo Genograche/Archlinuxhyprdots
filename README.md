@@ -82,6 +82,8 @@ reboot
 ```
 ## Note
 - `SUPER`+`backspace` brings up keybinds
+- `super`+`return(enter)` brings up terminal(alacritty)
+- incase hyprland fails `ctrl`+`alt`+`F6(any function keys)` to open tty
 - change window resolution in hyprland.conf
 
 ## Important Things to remember(ONLY FOR ME-PERSONAL)
