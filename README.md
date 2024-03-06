@@ -81,7 +81,7 @@ zramctl
 reboot
 ```
 ## Note
-- SUPER backspace brings up keybinds
+- `SUPER`+`backspace` brings up keybinds
 - change window resolution in hyprland.conf
 
 ## Important Things to remember(ONLY FOR ME-PERSONAL)
