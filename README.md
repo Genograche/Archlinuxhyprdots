@@ -141,7 +141,8 @@ sudo cp -r sddm/corners /usr/share/sddm/themes/
 sudo cp sddm/genograche.face.icon /usr/share/sddm/faces/
 ```
 - change sddm configuration in in /etc/sddm.conf.d/sddm.conf(on arch default config is available in /usr/lib/sddm/sddm.conf.d/default.conf)
-```[Theme]
+```
+[Theme]
 Current=corners
 ```
 ## Ignore the following if dhcpcd is not installed
