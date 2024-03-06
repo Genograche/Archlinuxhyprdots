@@ -80,6 +80,9 @@ zramctl
 ```
 reboot
 ```
+## Note
+- SUPER backspace brings up keybinds
+- chnage window resolution in hyprland.conf
 
 ## Important Things to remember(ONLY FOR ME-PERSONAL)
 - Get fastest mirrors with
