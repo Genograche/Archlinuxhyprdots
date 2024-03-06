@@ -1,0 +1,10 @@
+## Install essential packages
+pacman -Syu sddm qt5-graphicaleffects qt5-svg qt5-quickcontrols2
+## copy to target
+sudo cp -r corners/ /usr/share/sddm/themes/
+## change sddm configuration in in /etc/sddm.conf.d/sddm.conf(on arch default config is available in /usr/lib/sddm/sddm.conf.d/default.conf)
+[Theme]
+Current=corners
+## optionally add a profile pic to login screen
+rename a png file to yourusername.face.icon and put it in  /usr/share/sddm/faces/
+

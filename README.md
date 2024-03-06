@@ -83,8 +83,8 @@ reboot
 ## Note
 - `SUPER`+`backspace` brings up keybinds
 - `super`+`return(enter)` brings up terminal(alacritty)
-- incase hyprland fails `ctrl`+`alt`+`F6(any function keys)` to open tty
-- change window resolution in hyprland.conf
+- Incase hyprland fails `ctrl`+`alt`+`F6(any function keys)` to open tty
+- Change window resolution in hyprland.conf
 
 ## Important Things to remember(ONLY FOR ME-PERSONAL)
 - Get fastest mirrors with
@@ -135,8 +135,15 @@ export VDPAU_DRIVER=radeonsi
 export LIBVA_DRIVER_NAME=radeonsi
 ```
 - loginmanager-sddm
-- Get a cursor theme
-
+```
+pacman -Syu sddm qt5-graphicaleffects qt5-svg qt5-quickcontrols2
+sudo cp -r sddm/corners /usr/share/sddm/themes/
+sudo cp sddm/genograche.face.icon /usr/share/sddm/faces/
+```
+- change sddm configuration in in /etc/sddm.conf.d/sddm.conf(on arch default config is available in /usr/lib/sddm/sddm.conf.d/default.conf)
+```[Theme]
+Current=corners
+```
 ## Ignore the following if dhcpcd is not installed
 
 ```
@@ -165,6 +172,8 @@ winetricks xact
 ## Rofi configs and styles from adi1090x and Axenide
 [adi1090x](https://github.com/adi1090x)\
 [Axenide](https://github.com/Axenide)
+## Sddm theme from
+[aczw](https://github.com/aczw)
 ## The rest from Archwiki and Hyprlandwiki
 [Archwiki](https://wiki.archlinux.org/)\
 [Hyprland](https://wiki.hyprland.org/)
