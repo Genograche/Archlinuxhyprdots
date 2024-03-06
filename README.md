@@ -64,7 +64,7 @@ chmod +x ~/.config/hypr/scripts/*
 chmod +x ~/.config/waybar/scripts/*
 ```
 
-## Enable zram
+## Enable zram (Ignore if archinstall script is used)
 ```
 sudo pacman -S zram-generator
 touch /etc/systemd/zram-generator.config
