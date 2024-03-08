@@ -25,6 +25,9 @@ if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
 
+## nix path
+#export PATH="$HOME/.nix-profile/bin:$PATH"
+
 #  ┬  ┌─┐┌─┐┌┬┐  ┌─┐┌┐┌┌─┐┬┌┐┌┌─┐
 #  │  │ │├─┤ ││  ├┤ ││││ ┬││││├┤ 
 #  ┴─┘└─┘┴ ┴─┴┘  └─┘┘└┘└─┘┴┘└┘└─┘
@@ -213,7 +216,7 @@ alias musica="ncmpcpp"
 alias history='history 1'
 alias inm='sudo systemctl restart NetworkManager'
 alias service='sudo systemctl'
-alias vizsh='vi $HOME/.zshrc'
+alias vizsh='nvim $HOME/.zshrc'
 alias srczsh='source $HOME/.zshrc'
 alias visu='sudo nvim'
 
@@ -230,13 +233,12 @@ alias ld='eza -lhD --icons=auto' # long list dirs
 alias lt='eza -aT --color=always --group-directories-first' # tree listing
 
 # pacman and yay
-alias pacsy='sudo pacman -Syy'               # Refresh pkglist 
 alias update='sudo pacman -Syu'              # Refresh pkglist & update standard pkgs
 alias fullupdate='$aurhelper -Syu'           # update standard pkgs and AUR pkgs (aurhelper)
 alias parsua='$aurhelper -Sua'               # update only AUR pkgs (aurhelper)
 alias unlock='sudo rm /var/lib/pacman/db.lck'        # remove pacman lock
-#alias cleanup='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias cleanup="$aurhelper -Qqd | $aurhelper -Rsu --print -"
+alias cleanup='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages
+#alias cleanup="$aurhelper -Qqd | $aurhelper -Rsu --print -" # remove unused packages
 alias pacrm='sudo pacman -Rns' # uninstall package
 alias pacin='sudo pacman -S' # install pkg
 alias pl='$aurhelper -Qs' # list installed package
@@ -253,11 +255,14 @@ alias .5='cd ../../../../..'
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 alias mkdir='mkdir -p'
 
+# Get cpu freq
+alias cpufreq='sudo auto-cpufreq --stats'
+
 # Fixes "Error opening terminal: xterm-kitty" when using the default kitty term to open some programs through ssh
 #alias ssh='alacritty ssh'
 
 # Code editors
-alias vi="nvim"
+alias vim="nvim"
 alias vc='sublime' # gui code editor
 alias em="/usr/bin/emacs -nw"
 alias emacs="emacsclient -c -a 'emacs'"
