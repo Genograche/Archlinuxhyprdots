@@ -1,5 +1,5 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "top",
   "mod": "dock",
   "exclusive": true,
@@ -225,8 +225,8 @@
     "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
     "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
     "scroll-step": 5,
-    "tooltip": true,
-    "tooltip-format": " at {volume}%"
+    "tooltip": false,
+//    "tooltip-format": " at {volume}%"
   },
 
   "mpris": {

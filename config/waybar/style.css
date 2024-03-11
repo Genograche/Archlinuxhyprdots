@@ -81,6 +81,7 @@ tooltip {
     margin-left: 5px;
     border: 1px solid @mantle;
     border-radius: 10px 0px 0px 10px;
+    color: @lavender;
 }
 
 #workspaces {
@@ -95,10 +96,6 @@ tooltip {
     border-radius: 10px;
     margin-left: 5px;
     margin-right: 5px;
-}
-
-#clock {
-    color: @lavender;
 }
 
 #idle_inhibitor{
@@ -168,7 +165,7 @@ tooltip {
 
 #custom-power {
     color: @red;
-	background: @base;
+    background: @base;
     padding: 0px 5px;
     margin: 3px 0px;
     margin-top: 5px;
