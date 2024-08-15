@@ -28,7 +28,7 @@ cd Arch-hyprlandconfigs
 
 ```
     yay -S hyprland polkit-kde-agent gnome-keyring seahorse gnome-system-monitor \
-    ffmpeg neovim viewnior rofi-lbonn-wayland pavucontrol thunar galculator \
+    ffmpeg neovim shotwell rofi pavucontrol thunar galculator \
     starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
     xarchiver thunar-archive-plugin thunar-media-tags-plugin kitty alacritty \
