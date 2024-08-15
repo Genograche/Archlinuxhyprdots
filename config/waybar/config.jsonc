@@ -1,5 +1,5 @@
 {
-  "layer": "bottom",
+  "layer": "top",
   "position": "top",
   "mod": "dock",
   "exclusive": true,
@@ -41,8 +41,8 @@
 //      "1": "➊",
 //      "2": "➋",
       "active": "󰮯",
-      "default":"󰊠", 
-//      "default":"󰧵", 
+      "default":"󰊠",
+//      "default":"󰧵",
       "empty": "󰊠",
 //      "special":"",
       "urgent": ""
