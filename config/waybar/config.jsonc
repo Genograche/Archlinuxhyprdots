@@ -66,7 +66,8 @@
     "on-click": "activate",
     "on-click-middle": "close",
     "ignore-list": [
-      "Alacritty"
+      "Alacritty",
+      "Rofi"
     ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
@@ -121,10 +122,10 @@
         "format-linked": "󰈀 {ifname} (No IP)",
         "format-disconnected": " 󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
-        "format-alt": "{essid}",
+//        "format-alt": "{essid}",
 //        "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2,
-        "on-click-right": "~/.config/waybar/scripts/network.py"
+        "on-click": "~/.config/waybar/scripts/network.py",
   },
 //  "bluetooth": {
 //    "exec": "~/.config/waybar/scripts/rofi-bluetooth-menu --status",
