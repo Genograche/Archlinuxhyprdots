@@ -51,7 +51,8 @@ read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
     cp -R config/* ~/.config/
-    cp -R cursors/* ~/.local/share/icons/
+    cp -R .icons ~/
+    cp -R .themes ~/
     cp -R Wallpapers ~/Pictures/
     cp -R fonts ~/.local/share/
     # Set some files as exacutable 

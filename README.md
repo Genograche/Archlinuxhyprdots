@@ -35,7 +35,7 @@ cd Arch-hyprlandconfigs
     thunar-volman gvfs-mtp waybar swaync swaidle swaylock-effects pamixer \
     papirus-icon-theme nwg-look ttf-firacode-nerd noto-fonts \
     noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
-    qt5ct qt6ct qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
+    kvantum kvantum-qt5 qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
     pipewire lib32-pipewire wireplumber pipewire-audio pipewire-pulse \
     pipewire-alsa pipewire-jack lib32-pipewire-jack xdg-user-dirs \
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk catppuccin-gtk-theme-mocha --needed
@@ -51,10 +51,13 @@ mkdir -p ~/Pictures/Screenshots/
 ## Copy Config files
 ```
     cp -R config/* ~/.config/
-    cp -R cursors/* ~/.local/share/icons/
+    cp -R .icons ~/
+    cp -R .themes ~/
     cp -R Wallpapers ~/Pictures/
     cp -R fonts ~/.local/share/
 ```
+## Kvantum theme is in justincase directory,use it to change the themes of qt apps.
+
 ```
 fc-cache -fv
 ```
@@ -85,6 +88,7 @@ reboot
 - `super`+`return(enter)` brings up terminal(alacritty)
 - Incase hyprland fails `ctrl`+`alt`+`F6(any function keys)` to open tty
 - Change window resolution in hyprland.conf
+- To change the themes of qt apps there is a kvantum theme in justincase directory use it.
 
 ## Important Things to remember(ONLY FOR ME-PERSONAL)
 - Get fastest mirrors with
