@@ -8,6 +8,9 @@
 export VISUAL="${EDITOR}"
 export TERM="xterm-256color"
 
+##conda
+eval "$(/home/genograche/miniforge3/bin/conda shell.zsh hook)"
+
 ## setting starship prompt
 export STARSHIP_CONFIG=~/.config/starship/starship.toml 
 eval "$(starship init zsh)"
@@ -299,7 +302,7 @@ alias commit='git commit -am'
 alias fetch='git fetch'
 alias pull='git pull origin'
 alias push='git push origin'
-alias stat='git status'  # 'status' is protected name so using 'stat' instead
+alias gstat='git status'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 
@@ -329,11 +332,20 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 
 #to make alias work after sudo
 alias sudo="sudo "
-
+alias gparted="sudo -E gparted"
+#vpn
 alias pvpn="sudo openvpn /etc/openvpn/protonvpn/jp-free-305010.protonvpn.udp.ovpn"
+
+#systeminfo
+alias raminfo="sudo dmidecode --type=Memory Device"
 
 #some scripts
 alias wlprop="./.config/hypr/scripts/wlprop"
+
+#conda
+alias cdps="cd ~/Projects/siesta/"
+alias cdas="conda activate siesta"
+alias cdd="conda deactivate"
 
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
 #  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
