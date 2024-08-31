@@ -1,5 +1,5 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "top",
   "mod": "dock",
   "exclusive": true,
@@ -70,7 +70,8 @@
       "Rofi"
     ],
     "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
+      "firefoxdeveloperedition": "firefox-developer-edition",
+      "ru-turikhay-tlauncher-bootstrap-Bootstrap":"lutris"
     }
   },
 

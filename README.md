@@ -131,7 +131,15 @@ radeon.cik_support=0 amdgpu.cik_support=1
 ```
 amdgpu.runpm=0
 ```
+- If you want to enable the new Dynamic Power Management and Display Code experimental support, you need to also add the following lines(could tottaly be unnecessary,so only enable if needed).
+```
+amdgpu.dc=1
+amdgpu.dpm=1
+```
 -Then update grub
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 - For my amd,if needed for vdapu,set env variables in /etc/profile
 ```
