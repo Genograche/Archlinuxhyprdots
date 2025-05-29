@@ -1,6 +1,3 @@
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
 
 [env]
 TERM = "xterm-256color"
@@ -127,3 +124,8 @@ instance = "Alacritty"
 [window.padding]
 x = 2
 y = 2
+
+[general]
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
