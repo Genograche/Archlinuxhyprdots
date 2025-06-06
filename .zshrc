@@ -5,27 +5,10 @@
 #  ┬  ┬┌─┐┬─┐┌─┐
 #  └┐┌┘├─┤├┬┘└─┐
 #   └┘ ┴ ┴┴└─└─┘
-export VISUAL="${EDITOR}"
-export TERM="xterm-256color"
 
 ### Shell integrations
-##conda
-eval "$(/home/genograche/miniforge3/bin/conda shell.zsh hook)"
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/genograche/miniforge3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/genograche/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/home/genograche/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/genograche/miniforge3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
+export VISUAL="${EDITOR}"
+export TERM="xterm-256color"
 
 ## setting starship prompt
 export STARSHIP_CONFIG=~/.config/starship/starship.toml 
@@ -264,9 +247,9 @@ alias update='sudo pacman -Syu'              # Refresh pkglist & update standard
 alias fullupdate='$aurhelper -Syu'           # update standard pkgs and AUR pkgs (aurhelper)
 alias parsua='$aurhelper -Sua'               # update only AUR pkgs (aurhelper)
 alias unlock='sudo rm /var/lib/pacman/db.lck'        # remove pacman lock
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av' # remove unused packages
-alias cleanup1='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages
-#alias cleanup="$aurhelper -Qqd | $aurhelper -Rsu --print -" # remove unused packages
+alias cleanup='$aurhelper -Qtqd | $aurhelper -Rns -' # remove unused packages
+alias cleanup1='$aurhelper -Qtqd | $aurhelper -Rns -; sudo fstrim -av' # remove unused packages
+#alias cleanup1='sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av' # remove unused packages
 alias pacrm='sudo pacman -Rns' # uninstall package
 alias pacin='sudo pacman -S' # install pkg
 alias pl='$aurhelper -Qs' # list installed package
@@ -364,8 +347,11 @@ alias pvpn="sudo openvpn /etc/openvpn/protonvpn/jp-free-305010.protonvpn.udp.ovp
 #systeminfo
 alias raminfo="sudo dmidecode --type=Memory Device"
 
+#Time management
+alias settime="sudo timedatectl set-ntp false && sudo timedatectl set-time"
+alias synctime="timedatectl set-ntp true"
 #some scripts
-alias wlprop="./.config/hypr/scripts/wlprop"
+alias wlprop="hyprctl clients"
 
 #conda
 alias cdps="cd ~/Projects/siesta/"
