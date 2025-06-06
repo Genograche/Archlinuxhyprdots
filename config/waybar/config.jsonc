@@ -284,7 +284,7 @@
  "custom/power": {
    "format": "  ",
    "tooltip": false,
-   "on-click": "killall rofi || ~/.config/rofi/powermenu/type-5/powermenu.sh"
+   "on-click": "killall rofi && ~/.config/rofi/powermenu/type-5/powermenu.sh"
   }
 
 }
