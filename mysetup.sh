@@ -24,19 +24,19 @@ fi
 # slurp needed for wlprop?
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-    yay -S hyprland polkit-kde-agent gnome-keyring seahorse gnome-system-monitor \
+ yay -S hyprland hyprpolkitagent gnome-keyring seahorse mission-center \
     ffmpeg neovim shotwell rofi rofi-emoji pavucontrol thunar galculator \
-    starship cliphist wl-clipboard swww waypaper grimblast-git \
+    starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
     xarchiver thunar-archive-plugin thunar-media-tags-plugin kitty alacritty \
     thunar-volman gvfs-mtp waybar swaync swayidle swaylock-effects pamixer \
     papirus-icon-theme nwg-look ttf-firacode-nerd noto-fonts \
     noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
-    qt5ct qt6ct qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
+    kvantum kvantum-qt5 qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
     pipewire lib32-pipewire wireplumber pipewire-audio pipewire-pulse \
     pipewire-alsa pipewire-jack lib32-pipewire-jack xdg-user-dirs \
-    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --needed 
-else 
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --needed
+ else 
     exit
 fi
 
@@ -44,6 +44,7 @@ fi
 echo -e "Making needed directories.\n"
 xdg-user-dirs-update
 mkdir -p ~/Pictures/Screenshots/
+mkdir .config/zsh
 echo -e "Done!"
 
 ### Copy Config Files ###
@@ -66,7 +67,7 @@ fi
 
 ### Script is done ###
 echo -e "Script had completed.\n"
-echo -e "You can start Hyprland by typing Hyprland (note the capital H).\n"
+echo -e "You can start Hyprland by typing Hyprland (note the capital H).If something is not working reboot.Also don't forget to set your wallpaper and theme using waypaper and nwg-look for the first time you log in.\n"
 read -n1 -rep 'Would you like to start Hyprland now? (y,n)' HYP
 if [[ $HYP == "Y" || $HYP == "y" ]]; then
     exec Hyprland

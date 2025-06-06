@@ -27,12 +27,12 @@ cd Arch-hyprlandconfigs
 ### Required Packages
 
 ```
-    yay -S hyprland polkit-kde-agent gnome-keyring seahorse gnome-system-monitor \
+    yay -S hyprland hyprpolkitagent gnome-keyring seahorse mission-center \
     ffmpeg neovim shotwell rofi rofi-emoji pavucontrol thunar galculator \
     starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
     xarchiver thunar-archive-plugin thunar-media-tags-plugin kitty alacritty \
-    thunar-volman gvfs-mtp waybar swaync swaidle swaylock-effects pamixer \
+    thunar-volman gvfs-mtp waybar swaync swayidle swaylock-effects pamixer \
     papirus-icon-theme nwg-look ttf-firacode-nerd noto-fonts \
     noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
     kvantum kvantum-qt5 qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
@@ -44,9 +44,10 @@ cd Arch-hyprlandconfigs
 ```
 xdg-user-dirs-update
 ```
-## Making Screenshot directories
+## Making Some directories
 ```
 mkdir -p ~/Pictures/Screenshots/
+ mkdir .config/zsh
 ```
 ## Copy Config files
 ```
@@ -55,8 +56,9 @@ mkdir -p ~/Pictures/Screenshots/
     cp -R .themes ~/
     cp -R Wallpapers ~/Pictures/
     cp -R fonts ~/.local/share/
+    mkdir .config/zsh
 ```
-## Kvantum theme is in justincase directory,use it to change the themes of qt apps.
+
 
 ```
 fc-cache -fv
@@ -83,6 +85,14 @@ zramctl
 ```
 reboot
 ```
+## On First Boot
+- On first boot open `nwg-look` and set theme,cursor,and font.
+- Use `waypaper` to set wall paper
+- You only need to do this Once
+## Optional
+-The documentaion to set sddm is available in sddm folder
+- `Best of luck`
+
 ## Note
 - `SUPER`+`backspace` brings up keybinds
 - `super`+`return(enter)` brings up terminal(alacritty)
@@ -115,8 +125,7 @@ reflector --sort rate --protocol http,https --save /etc/pacman.d/mirrorlist
 pactl info
 ```
 - Check xdg-desktop-portal-hyprland(obs)
-- Blootooth?,Task manager?,powertop?
-- wine,lutris
+- Maybe setup bluetooth,powertop,wine and lutris.
 - check for amdgpu kernal driver instead of radeon
 ```
 lspci -k | grep -A 3 -E "(VGA|3D|Display)"
@@ -141,7 +150,7 @@ amdgpu.dpm=1
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-- For my amd,if needed for vdapu,set env variables in /etc/profile
+- For my amd,if needed for vdapuinfo(hardware accel),set env variables in /etc/profile
 ```
 export VDPAU_DRIVER=radeonsi
 export LIBVA_DRIVER_NAME=radeonsi
@@ -157,27 +166,10 @@ sudo cp sddm/genograche.face.icon /usr/share/sddm/faces/
 [Theme]
 Current=corners
 ```
-## Ignore the following if dhcpcd is not installed
-
-```
-sudo systemctl enable dhcpcd@(ip link your interface name).service
-```
-
-- If dhcpcd causes the startup to slow then save the folllowing to /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
-
-```
-[Service]
-ExecStart=
-ExecStart=/usr/bin/dhcpcd -b -q %I
-```
-- If needed disable dhcpcd ARP probing in ```\etc\dhcpcd.conf```
-```
-noarp
-```
 - If games in wine doesn't have sound get
 ```
 winetricks faudio
-winetricks xact
+winetricks xact_x64
 ```
 
 ## Base config from RumiAxalotl

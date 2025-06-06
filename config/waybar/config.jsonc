@@ -60,7 +60,7 @@
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 18,
-    "icon-theme": "Papirus",
+    "icon-theme": "BeautyLineSimple",
     "spacing": 0,
     "tooltip-format": "{title}",
     "on-click": "activate",
@@ -143,13 +143,14 @@
     "format": " {}%",
     "tooltip": true,
     "tooltip-format": "Memory - {used:0.1f}GB used",
-    "on-click": "gnome-system-monitor",
+    "on-click": "missioncenter",
     "on-click-right": "alacritty -e htop"
   },
   "cpu": {
     "interval": 1,
     "format": " {usage}%",
-    "on-click": "gnome-system-monitor"
+    "on-click": "missioncenter",
+    "on-click-right": "alacritty -e htop"
   },
 
   "disk": {
@@ -160,7 +161,7 @@
     "format-alt": "󰋊 {percentage_used}%",
     "tooltip": true,
     "tooltip-format": "Disk - {used} used out of {total} on {path} ({percentage_used}%)",
-    "on-click": "gnome-system-monitor"
+    "on-click": "missioncenter"
   },
 
   "temperature": {
@@ -169,8 +170,9 @@
     "format": " {temperatureC}°C",
     "critical-threshold": 80,
     "format-critical": " {temperatureC}°C",
-    "on-click": "gnome-system-monitor"
+    "on-click": "missioncenter"
   },
+
 //  "custom/weather": {
 //    "tooltip": true,
 //    "format": "{}",
@@ -227,7 +229,7 @@
     "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
     "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
     "scroll-step": 5,
-    "tooltip": false,
+    "tooltip": false
 //    "tooltip-format": " at {volume}%"
   },
 
