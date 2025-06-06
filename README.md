@@ -47,7 +47,7 @@ xdg-user-dirs-update
 ## Making Some directories
 ```
 mkdir -p ~/Pictures/Screenshots/
- mkdir .config/zsh
+mkdir .config/zsh
 ```
 ## Copy Config files
 ```
@@ -90,7 +90,7 @@ reboot
 - Use `waypaper` to set wall paper
 - You only need to do this Once
 ## Optional
--The documentaion to set sddm is available in sddm folder
+The documentaion to set sddm is available in sddm folder
 - `Best of luck`
 
 ## Note
