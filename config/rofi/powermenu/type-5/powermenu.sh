@@ -75,7 +75,7 @@ run_cmd() {
 			swaylock
       systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			hyprctl dispatch exit 0
+			loginctl terminate-user ""
 		fi
 	else
 		exit 0
