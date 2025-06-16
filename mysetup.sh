@@ -24,7 +24,7 @@ fi
 # slurp needed for wlprop?
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
- yay -S hyprland uwsm libnewt hyprpolkitagent gnome-keyring seahorse mission-center \
+ yay -S hyprland hyprpolkitagent gnome-keyring seahorse mission-center \
     ffmpeg neovim shotwell rofi rofi-emoji pavucontrol thunar galculator \
     starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
@@ -35,7 +35,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     kvantum kvantum-qt5 qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
     pipewire lib32-pipewire wireplumber pipewire-audio pipewire-pulse \
     pipewire-alsa pipewire-jack lib32-pipewire-jack xdg-user-dirs \
-    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --needed
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm libnewt --needed
  else 
     exit
 fi

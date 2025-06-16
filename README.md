@@ -27,7 +27,7 @@ cd Arch-hyprlandconfigs
 ### Required Packages
 
 ```
-    yay -S hyprland uwsm libnewt hyprpolkitagent gnome-keyring seahorse \
+    yay -S hyprland hyprpolkitagent gnome-keyring seahorse \
     mission-center ffmpeg neovim shotwell rofi rofi-emoji pavucontrol thunar \
     galculator starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
@@ -38,7 +38,7 @@ cd Arch-hyprlandconfigs
     kvantum kvantum-qt5 qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
     pipewire lib32-pipewire wireplumber pipewire-audio pipewire-pulse \
     pipewire-alsa pipewire-jack lib32-pipewire-jack xdg-user-dirs \
-    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk --needed
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm libnewt --needed
 ```
 ## Update user directories
 ```
