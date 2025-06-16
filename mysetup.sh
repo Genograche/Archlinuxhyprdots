@@ -24,7 +24,7 @@ fi
 # slurp needed for wlprop?
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
- yay -S hyprland hyprpolkitagent gnome-keyring seahorse mission-center \
+ yay -S hyprland uwsm libnewt hyprpolkitagent gnome-keyring seahorse mission-center \
     ffmpeg neovim shotwell rofi rofi-emoji pavucontrol thunar galculator \
     starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \

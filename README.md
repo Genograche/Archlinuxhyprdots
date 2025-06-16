@@ -27,9 +27,9 @@ cd Arch-hyprlandconfigs
 ### Required Packages
 
 ```
-    yay -S hyprland hyprpolkitagent gnome-keyring seahorse mission-center \
-    ffmpeg neovim shotwell rofi rofi-emoji pavucontrol thunar galculator \
-    starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
+    yay -S hyprland uwsm libnewt hyprpolkitagent gnome-keyring seahorse \
+    mission-center ffmpeg neovim shotwell rofi rofi-emoji pavucontrol thunar \
+    galculator starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
     ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
     xarchiver thunar-archive-plugin thunar-media-tags-plugin kitty alacritty \
     thunar-volman gvfs-mtp waybar swaync swayidle swaylock-effects pamixer \
