@@ -98,6 +98,15 @@ The documentaion to set sddm is available in sddm folder
 - Incase hyprland fails `ctrl`+`alt`+`F6(any function keys)` to open tty
 - Change window resolution in hyprland.conf
 - To change the themes of qt apps there is a kvantum theme in justincase directory use it.
+##  Git help
+- github-cli(`gh`)
+- `git clone`
+- `gh auth login`
+- `git add (files)`
+- `git rm -r (files) && git mv && git cp`
+- `git commit -a -m 'Minor change in vimrc'`
+- `git push`
+- `git pull`
 
 ## Important Things to remember(ONLY FOR ME-PERSONAL)
 - Get fastest mirrors with
