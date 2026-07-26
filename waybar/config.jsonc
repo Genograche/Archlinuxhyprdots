@@ -34,17 +34,15 @@
     "disable-scroll": false,
     "all-outputs": true,
     "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({workspace=\"e+1\"})'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({workspace=\"e-1\"})'",
     "format": "{icon}",
     "format-icons": {
-//      "1": "➊",
-//      "2": "➋",
       "active": "󰮯",
       "default":"󰊠",
 //      "default":"󰧵",
       "empty": "󰊠",
-//      "special":"",
+      "special":"",
       "urgent": ""
   },
 
@@ -124,7 +122,6 @@
         "format-disconnected": " 󰖪 ",
         "tooltip-format-disconnected": "Disconnected",
         "format-alt": "{essid}",
-   //     "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
         "interval": 2,
         "on-click-right": "~/.config/waybar/scripts/network.py"
   },
@@ -179,13 +176,6 @@
 //    "interval": 60,
 //    "exec": "~/.config/waybar/scripts/waybar-wttr.py",
 //    "return-type": "json"
-//  },
-//  "custom/update": {
-//    "format": "{}",
-//    "interval": 60,
-//    "exec": "~/.config/waybar/scripts/update",
-//    "on-click": "~/.config/waybar/scripts/update update",
-//    "tooltip": false
 //  },
   "battery": {
     "states": {
