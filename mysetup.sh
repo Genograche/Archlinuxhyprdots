@@ -24,18 +24,15 @@ fi
 # slurp needed for wlprop?
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
- yay -S hyprland hyprpolkitagent gnome-keyring seahorse mission-center \
-    ffmpeg neovim shotwell rofi rofi-emoji pavucontrol thunar galculator \
-    starship cliphist wl-clipboard swww waypaper slurp grimblast-git \
-    ffmpegthumbnailer tumbler gvfs playerctl noise-suppression-for-voice \
-    xarchiver thunar-archive-plugin thunar-media-tags-plugin kitty alacritty \
-    thunar-volman gvfs-mtp waybar swaync swayidle swaylock-effects pamixer \
-    papirus-icon-theme nwg-look ttf-firacode-nerd noto-fonts \
-    noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
-    kvantum kvantum-qt5 qt5-wayland qt6-wayland brightnessctl hyprpicker-git \
-    pipewire lib32-pipewire wireplumber pipewire-audio pipewire-pulse \
-    pipewire-alsa pipewire-jack lib32-pipewire-jack xdg-user-dirs \
-    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm libnewt --needed
+     yay -S hyprland hyprpolkitagent gnome-keyring seahorse \
+    mission-center ffmpeg neovim shotwell rofi rofi-emoji pavucontrol \
+    galculator starship cliphist wl-clipboard swww waypaper grim \
+    playerctl noise-suppression-for-voice xarchiver kitty alacritty dolphin \
+    waybar swaync pamixer papirus-icon-theme nwg-look ttf-firacode-nerd noto-fonts \
+    noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd xdg-user-dirs \
+    qt5-wayland qt6-wayland brightnessctl pipewire lib32-pipewire wireplumber 
+    pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack \
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm libnewt swappy --needed
  else 
     exit
 fi

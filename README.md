@@ -27,17 +27,16 @@ cd Arch-hyprlandconfigs
 ### Required Packages
 
 ```
-    yay -S hyprland hyprpolkitagent gnome-keyring seahorse \
+yay -S hyprland hyprpolkitagent gnome-keyring seahorse \
     mission-center ffmpeg neovim shotwell rofi rofi-emoji pavucontrol \
     galculator starship cliphist wl-clipboard swww waypaper grim \
     playerctl noise-suppression-for-voice xarchiver kitty alacritty dolphin \
-    waybar swaync swayidle swaylock-effects pamixer \
-    papirus-icon-theme nwg-look ttf-firacode-nerd noto-fonts \
-    noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd \
-    qt5-wayland qt6-wayland brightnessctl \
-    pipewire lib32-pipewire wireplumber pipewire-audio pipewire-pulse \
-    pipewire-alsa pipewire-jack lib32-pipewire-jack xdg-user-dirs \
-    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm libnewt swappy--needed
+    waybar swaync pamixer papirus-icon-theme nwg-look ttf-firacode-nerd noto-fonts \
+    noto-fonts-emoji ttf-nerd-fonts-symbols-common otf-firamono-nerd xdg-user-dirs \
+    qt5-wayland qt6-wayland brightnessctl pipewire lib32-pipewire wireplumber 
+    pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack lib32-pipewire-jack \
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk uwsm libnewt swappy --needed
+
 ```
 ## Update user directories
 ```
