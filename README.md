@@ -159,7 +159,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 - For my amd,if needed for vdapuinfo(hardware accel),set env variables in /etc/profile
 ```
-export VDPAU_DRIVER=radeonsi
+export VDPAU_DRIVER=va_gl
 export LIBVA_DRIVER_NAME=radeonsi
 ```
 - loginmanager-sddm
