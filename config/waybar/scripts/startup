@@ -1,0 +1,14 @@
+#!/bin/sh
+# Get the current hour
+current_hour=$(date +"%H")
+
+# Check if the current hour is between 6:00 and 18:00
+if [ "$current_hour" -ge 6 ] && [ "$current_hour" -lt 18 ]; then
+  # Run light-mode script
+  ~/.config/waybar/scripts/light-mode
+else
+  # Run dark-mode script
+  ~/.config/waybar/scripts/dark-mode
+fi
+
+~/.config/waybar/scripts/touchpad

@@ -1,0 +1,59 @@
+#!/bin/sh
+
+iDIR="$HOME/.config/waybar/icons"
+
+# Get brightness
+get_backlight() {
+  #brightnessctl -m -d device_name | awk -F, '{print substr($4, 0, length($4)-1)}' ##device_name can be found using \
+  #$(brightnessctl -l | grep backlight)
+  light=$(brightnessctl -m | grep -o '[0-9]\+%' | head -c-2)
+  echo "${light}%"
+}
+
+# Get icons
+get_icon() {
+  current="$(brightnessctl g)"
+  if [ "$current" -ge 0 ] && [ "$current" -le 51 ]; then
+    echo "$iDIR/brightness-20.png"
+  elif [ "$current" -ge 51 ] && [ "$current" -le 102 ]; then
+    echo "$iDIR/brightness-40.png"
+  elif [ "$current" -ge 102 ] && [ "$current" -le 153 ]; then
+    echo "$iDIR/brightness-60.png"
+  elif [ "$current" -ge 153 ] && [ "$current" -le 204 ]; then
+    echo "$iDIR/brightness-80.png"
+  elif [ "$current" -ge 204 ] && [ "$current" -le 254 ]; then
+    echo "$iDIR/brightness-90.png"
+  elif [ "$current" -ge 255 ]; then
+    echo "$iDIR/brightness-100.png"
+  fi
+}
+
+notify_user() {
+  icon=$(get_icon)
+  brightness=$(get_backlight)
+  notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$icon" "Brightness : $brightness"
+}
+
+inc_backlight() {
+  brightnessctl set 10%+ && notify_user
+}
+
+dec_backlight() {
+  brightnessctl set 10%- && notify_user
+}
+
+case "$1" in
+  --get)
+    brightnessctl g
+    ;;
+  --inc)
+    inc_backlight
+    ;;
+  --dec)
+    dec_backlight
+    ;;
+  *)
+    get_backlight
+    ;;
+esac
+
