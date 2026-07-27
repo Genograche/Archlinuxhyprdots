@@ -27,7 +27,7 @@ cd Arch-hyprlandconfigs
 ### Required Packages
 
 ```
-yay -S hyprland hyprpolkitagent gnome-keyring seahorse \
+yay -S hyprland hyprpolkitagent hyprlock gnome-keyring seahorse \
     mission-center ffmpeg neovim shotwell rofi rofi-emoji pavucontrol \
     galculator starship cliphist wl-clipboard swww waypaper grim \
     playerctl noise-suppression-for-voice xarchiver kitty alacritty dolphin \
